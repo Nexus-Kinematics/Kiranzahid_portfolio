@@ -1,184 +1,448 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#09090f">
-  <meta name="description" content="Kiran Zahid — AI & Robotics Developer. AI automation, robotics, and software testing projects.">
-  <title>Kiran Zahid | AI & Robotics Developer</title>
+  <title>Kiran Zahid | AI &amp; Robotics Developer</title>
+  <meta name="description" content="Portfolio of Kiran Zahid, an AI and robotics developer who builds AI-assisted automation workflows and has hands-on software testing experience.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f3f6f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0e1a21" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://nexus-kinematics.github.io/Kiranzahid_portfolio/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Kiran Zahid">
+  <meta property="og:title" content="Kiran Zahid | AI &amp; Robotics Developer">
+  <meta property="og:description" content="AI automation workflows, robotics studies, and software testing projects by Kiran Zahid.">
+  <meta property="og:url" content="https://nexus-kinematics.github.io/Kiranzahid_portfolio/">
+  <meta property="og:image" content="https://nexus-kinematics.github.io/Kiranzahid_portfolio/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Kiran Zahid, AI and Robotics Developer">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preload" href="fonts/bricolage-grotesque-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
-  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
   <header class="site-header">
-    <a class="brand" href="#home" aria-label="Kiran Zahid home"><span class="brand-mark">K</span><span>KIRAN<span class="brand-dot">.</span></span></a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-    <button class="dashboard-trigger" id="dashboardOpen" type="button">✎ Edit portfolio</button>
-    <nav id="nav">
-      <a href="#about">About</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#learning">Learning</a><a class="nav-contact" href="#contact">Contact <span>↗</span></a>
-    </nav>
+    <div class="wrap site-header__inner">
+      <a class="brand" href="#top">Kiran Zahid</a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="siteNav">Menu</button>
+      <nav class="nav" id="siteNav" aria-label="Main">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#about">About</a></li>
+          <li><a class="nav__link" href="#skills">Skills</a></li>
+          <li><a class="nav__link" href="#projects">Projects</a></li>
+          <li><a class="nav__link" href="#experience">Experience</a></li>
+          <li><a class="nav__link" href="#education">Education</a></li>
+          <li><button class="nav__link nav__link--button" id="dashboardOpen" type="button" aria-haspopup="dialog">Edit portfolio</button></li>
+          <li><a class="nav__link nav__link--cta" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section class="hero section" id="home">
-      <div class="hero-copy">
-        <div class="eyebrow"><span class="status-dot"></span> AI · AUTOMATION · ROBOTICS</div>
-        <p class="intro">Hello, I'm</p>
-        <h1 data-edit="heroName">Kiran <span>Zahid</span></h1>
-        <h2 data-edit="heroRole">AI &amp; Robotics <em>Developer</em></h2>
-        <p class="hero-description" data-edit="heroDescription">I explore practical ways to use artificial intelligence, automation, robotics, and software quality practices to solve real-world problems.</p>
-        <div class="hero-actions"><a class="button button-primary" href="#projects">Explore my work <span>↘</span></a><a class="button button-secondary" href="#contact">Get in touch</a><button class="button button-secondary" id="downloadCv" type="button">Download CV ↓</button></div>
-        <div class="social-links">
-          <a href="https://www.linkedin.com/in/kiran-zahid-3a4a5a433" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-          <a href="https://github.com/Nexus-Kinematics" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-          <a href="https://www.fiverr.com/s/Vrrma2z" target="_blank" rel="noopener noreferrer">Fiverr ↗</a>
-          <a href="https://www.upwork.com/freelancers/~01c463310230087cd5?mp_source=share" target="_blank" rel="noopener noreferrer">Upwork ↗</a>
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="wrap hero__grid">
+        <div class="hero__text">
+          <h1 id="hero-title">Kiran Zahid</h1>
+          <p class="hero__role" data-edit="heroRole" data-label="Professional title" data-group="Profile and about">AI &amp; Robotics Developer</p>
+          <p class="hero__intro" data-edit="heroIntro" data-label="Hero introduction" data-group="Profile and about">I build AI-assisted automation workflows, study robotics, and have hands-on experience testing point-of-sale software.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#projects">View projects</a>
+            <a class="btn btn--secondary" href="Kiran-Zahid-CV.pdf" download>Download CV (PDF)</a>
+          </div>
+          <ul class="link-list" aria-label="Profiles">
+            <li><a href="https://www.linkedin.com/in/kiran-zahid-3a4a5a433" target="_blank" rel="noopener noreferrer">LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+            <li><a href="https://github.com/Nexus-Kinematics" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+            <li><a href="https://www.fiverr.com/s/Vrrma2z" target="_blank" rel="noopener noreferrer">Fiverr<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+            <li><a href="https://www.upwork.com/freelancers/~01c463310230087cd5?mp_source=share" target="_blank" rel="noopener noreferrer">Upwork<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+          </ul>
+        </div>
+        <figure class="portrait">
+          <img
+            src="assets/kiran-profile.jpg"
+            srcset="assets/kiran-profile-480.jpg 480w, assets/kiran-profile.jpg 716w"
+            sizes="(max-width: 760px) 80vw, 380px"
+            width="716" height="896"
+            fetchpriority="high"
+            alt="Kiran Zahid seated at a desk in a navy blazer and black hijab, holding a folder.">
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="wrap section__grid">
+        <h2 id="about-title">About</h2>
+        <div class="prose">
+          <p class="lead" data-edit="aboutLead" data-label="About headline" data-group="Profile and about">I build practical AI automations and I am studying robotics.</p>
+          <p data-edit="aboutText1" data-label="About paragraph 1" data-group="Profile and about">My work centers on workflow automation. I connect tools such as Gmail, Google Sheets, and OpenAI models so that routine tasks, like qualifying sales leads and answering customer emails, need less manual effort.</p>
+          <p data-edit="aboutText2" data-label="About paragraph 2" data-group="Profile and about">I am currently pursuing the Modern Robotics Specialization from Northwestern University. I also have hands-on software testing experience from the AQSA POS System project, and teaching experience that has strengthened my communication, organization, and time management.</p>
+          <p data-edit="aboutText3" data-label="About paragraph 3" data-group="Profile and about">I am based in Punjab, Pakistan, and I speak English, Urdu, and some French.</p>
         </div>
       </div>
-      <div class="hero-art profile-art" aria-label="Kiran Zahid profile photo">
-        <div class="profile-photo-frame"><img id="profilePicture" src="kiran-profile.jpg" alt="Kiran Zahid profile picture"></div>
-        <div class="profile-photo-caption"><span class="status-dot"></span> AI · AUTOMATION · ROBOTICS</div>
-      </div>
-      <a class="scroll-hint" href="#about"><span class="scroll-wheel"></span> SCROLL TO EXPLORE</a>
     </section>
 
-    <section class="section about-section" id="about">
-      <div class="section-heading"><p class="eyebrow">01 / ABOUT</p><h2>Curious by nature.<br><span>Driven to build.</span></h2></div>
-      <div class="about-content">
-        <p class="lead" data-edit="aboutLead">I’m interested in building useful technology that connects intelligent software with practical workflows.</p>
-        <p data-edit="aboutText">My work and learning span AI-powered solutions, workflow automation, robotics concepts, and software testing. I value clear problem-solving, thoughtful experimentation, and reliable results.</p>
-        <div class="focus-grid">
-          <div class="focus-item"><span class="focus-icon">✳</span><div><h3>Artificial Intelligence</h3><p>Applied AI concepts and practical prototypes</p></div></div>
-          <div class="focus-item"><span class="focus-icon">⌘</span><div><h3>Workflow Automation</h3><p>Streamlining repetitive processes</p></div></div>
-          <div class="focus-item"><span class="focus-icon">⚙</span><div><h3>Robotics</h3><p>Learning and exploring robotic systems</p></div></div>
-          <div class="focus-item"><span class="focus-icon">✓</span><div><h3>Software Quality</h3><p>Structured testing and quality checks</p></div></div>
+    <section class="section" id="skills" aria-labelledby="skills-title">
+      <div class="wrap section__grid">
+        <h2 id="skills-title">Skills</h2>
+        <div>
+          <div class="skills">
+            <div class="skills__group">
+              <h3>Automation and AI</h3>
+              <ul>
+                <li>AI automation</li>
+                <li>Workflow automation with n8n and Zapier</li>
+                <li>AI tools and large language models (LLMs)</li>
+                <li>Gmail, Google Sheets, and OpenAI integrations</li>
+              </ul>
+            </div>
+            <div class="skills__group">
+              <h3>Robotics</h3>
+              <ul>
+                <li>Robotics and automation fundamentals</li>
+                <li>Sensors and embedded systems (project in progress)</li>
+              </ul>
+              <p class="skills__note">Currently studying the Modern Robotics Specialization.</p>
+            </div>
+            <div class="skills__group">
+              <h3>Software testing</h3>
+              <ul>
+                <li>Manual functional testing</li>
+                <li>Test-case execution</li>
+                <li>Comparing expected and actual results</li>
+                <li>Documenting test outcomes</li>
+              </ul>
+            </div>
+            <div class="skills__group">
+              <h3>Professional and languages</h3>
+              <ul>
+                <li>Communication and organization</li>
+                <li>Time management</li>
+                <li>English (fluent), Urdu (native), French (basic)</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section projects-section" id="projects">
-      <div class="section-topline"><p class="eyebrow">02 / SELECTED WORK</p><span class="section-note">PROJECTS &amp; EXPERIMENTS</span></div>
-      <div class="section-title-row"><h2>Ideas made <span>practical.</span></h2><p>Explore each project one at a time. Work in progress is clearly marked.</p></div>
-      <div class="project-stack">
-        <article class="project-card project-featured">
-          <div class="project-visual visual-medical"><div class="visual-grid"></div><div class="medical-cross">+</div><div class="visual-chip">AI / HEALTHCARE</div><div class="visual-wave"></div></div>
-          <div class="project-info"><div class="project-meta"><span>01</span><span>IN PROGRESS</span></div><h3 data-edit="project1Title">CKD Screening AI</h3><p data-edit="project1Description">An AI demo exploring data-driven support for chronic kidney disease screening and early risk assessment. A project preview will be added when the demo visuals are ready.</p><div class="project-status"><span class="status-pulse"></span> <span data-edit="project1Status">Case study coming soon</span></div><div class="tags"><span>Artificial Intelligence</span><span>Healthcare</span><span>Prototype</span></div></div>
-        </article>
-        <article class="project-card">
-          <img class="project-screenshot" src="lead-qualification-workflow.png" alt="AI Lead Qualification and CRM Automation workflow showing lead cleaning, AI scoring, Google Sheets logging, sales notifications and error handling" loading="lazy">
-          <div class="project-info"><div class="project-meta"><span>02</span><span>WORKFLOW AUTOMATION</span></div><h3 data-edit="project2Title">AI Lead Qualification &amp; CRM Automation</h3><p data-edit="project2Description">An AI-assisted workflow that cleans inbound lead data, scores leads as Hot, Warm, or Cold, logs results to Google Sheets, and routes sales notifications by priority with error alerts.</p><div class="tags"><span>AI Scoring</span><span>CRM</span><span>Google Sheets</span><span>Notifications</span></div></div>
-        </article>
-        <article class="project-card">
-          <img class="project-screenshot" src="customer-support-email-agent.png" alt="AI Customer Support Email Agent workflow showing Gmail trigger, email cleaning, validation, human review, replies and Google Sheets logging" loading="lazy">
-          <div class="project-info"><div class="project-meta"><span>03</span><span>WORKFLOW AUTOMATION</span></div><h3 data-edit="project3Title">AI Customer Support Email Agent</h3><p data-edit="project3Description">An email-handling workflow that receives customer inquiries, cleans and validates email content, routes cases for human review when needed, sends replies or alerts, and logs outcomes to Google Sheets.</p><div class="tags"><span>AI Agent</span><span>Gmail</span><span>Human Review</span><span>Logging</span></div></div>
-        </article>
-        <article class="project-card">
-          <div class="project-visual coming-soon-visual"><div class="coming-soon-icon">✓</div><div class="visual-chip">SOFTWARE QUALITY</div></div>
-          <div class="project-info"><div class="project-meta"><span>04</span><span>TESTING IN PROGRESS</span></div><h3 data-edit="project4Title">AQSA POS System Testing</h3><p data-edit="project4Description">Testing work focused on checking point-of-sale system functionality and user workflows. A project case study will be shared when approved testing screenshots and details are ready.</p><div class="project-status"><span class="status-pulse"></span> <span data-edit="project4Status">Testing in progress · Details coming soon</span></div><div class="tags"><span>Software Testing</span><span>POS</span><span>Quality Assurance</span></div></div>
-        </article>
-        <article class="project-card">
-          <div class="project-visual coming-soon-visual fire-visual"><div class="coming-soon-icon">⌁</div><div class="visual-chip">ROBOTICS / EMBEDDED SYSTEMS</div></div>
-          <div class="project-info"><div class="project-meta"><span>05</span><span>IN PROGRESS</span></div><h3 data-edit="project5Title">Fire Chaser Extinguisher Robot</h3><p data-edit="project5Description">A robotics project in progress focused on a fire-detection and fire-response concept. Technical details and build visuals will be added as the project develops.</p><div class="project-status"><span class="status-pulse"></span> <span data-edit="project5Status">Build in progress · Preview coming soon</span></div><div class="tags"><span>Robotics</span><span>Sensors</span><span>Embedded Systems</span></div></div>
-        </article>
-      </div>
-      <p class="project-footnote">Workflow screenshots are included for the two automation projects. Other projects are marked in progress until approved visuals and further details are available.</p>
-    </section>
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="wrap">
+        <h2 id="projects-title">Projects</h2>
+        <p class="section-intro">Two automation workflows are documented with screenshots below. Projects that are still in progress are labeled, and their details will be added as they are ready to share.</p>
 
-    <section class="section experience-section" id="experience">
-      <div class="section-heading"><p class="eyebrow">03 / EXPERIENCE</p><h2>Learning by <span>doing.</span></h2></div>
-      <div class="timeline">
-        <div class="timeline-marker"></div>
-        <div class="timeline-content"><div class="timeline-label">INTERNSHIP</div><h3 data-edit="experienceTitle">AQSA IT SOLUTIONS</h3><p data-edit="experienceText">Internship experience connected to practical IT work and software quality. Specific dates and duties can be edited in the dashboard.</p><span class="timeline-line"></span></div>
-        <div class="timeline-content"><div class="timeline-label">TEACHING EXPERIENCE · 6 MONTHS</div><h3>The Educators</h3><p>Developed professional communication, responsibility, organization, and classroom-management skills while working directly with students.</p><span class="timeline-line"></span></div>
-        <div class="timeline-content"><div class="timeline-label">OCTOBER 2025 – 2026 · 1 YEAR (AS LISTED IN CV)</div><h3>Science Valley</h3><p>Built practical workplace experience through teaching, communication, organization, and time management; handled day-to-day professional duties.</p></div>
-      </div>
-    </section>
+        <article class="project" aria-labelledby="p-lead" data-attach="lead" data-attach-label="Project: AI Lead Qualification &amp; CRM Automation">
+          <div class="project__shot">
+            <img
+              src="assets/lead-qualification-workflow-1200.webp"
+              srcset="assets/lead-qualification-workflow-1200.webp 1200w, assets/lead-qualification-workflow.webp 1920w"
+              sizes="(max-width: 1120px) 100vw, 1120px"
+              width="1920" height="800" loading="lazy"
+              alt="Workflow editor showing an AI lead qualification automation: a web form feeds lead cleaning, AI scoring, saving to Google Sheets, sales notifications by lead priority, and an error alert.">
+          </div>
+          <div class="project__body">
+            <div>
+              <p class="project__kind" data-edit="leadKind" data-label="Lead qualification: category" data-group="Projects">Workflow automation</p>
+              <h3 class="project__title" id="p-lead" data-edit="leadTitle" data-label="Lead qualification: title" data-group="Projects">AI Lead Qualification &amp; CRM Automation</h3>
+              <p data-edit="leadDesc" data-label="Lead qualification: description" data-group="Projects">An automated workflow that takes inbound leads from a web form, cleans the data, and uses an AI model to score each lead from 0 to 100 as Hot, Warm, or Cold. Results are logged to a Google Sheets CRM, the lead receives an email acknowledgment, and the sales team is notified according to priority. An error alert is sent if a step fails.</p>
+              <ul class="tags" aria-label="Technologies" data-edit="leadTags" data-label="Lead qualification: tags (one per line)" data-group="Projects" data-edit-type="list">
+                <li>n8n</li>
+                <li>OpenAI</li>
+                <li>Google Sheets</li>
+                <li>Gmail</li>
+              </ul>
+              <p class="project__zoom"><a href="assets/lead-qualification-workflow.webp" target="_blank" rel="noopener noreferrer">Open full-size screenshot<span class="visually-hidden"> (opens in a new tab)</span></a></p>
 
-    <section class="section learning-section" id="learning">
-      <div class="section-topline"><p class="eyebrow">04 / EDUCATION &amp; LEARNING</p><span class="section-note">ALWAYS IN PROGRESS</span></div>
-      <div class="learning-grid">
-        <div><h2>Building a stronger <span>foundation.</span></h2><p class="learning-intro">A place for education, coursework, and independent study across AI, robotics, and technology.</p></div>
-        <div class="learning-list">
-          <div class="learning-item"><span class="learning-icon">01</span><div><h3 data-edit="learning1Title">Intermediate (ICS – Physics)</h3><p data-edit="learning1Text">Pakistan Girls College Dina · Completed 2025</p></div></div>
-          <div class="learning-item"><span class="learning-icon">02</span><div><h3 data-edit="learning2Title">AI Mastery</h3><p data-edit="learning2Text">AQSA IT SOLUTIONS · Completed</p></div></div>
-          <div class="learning-item"><span class="learning-icon">03</span><div><h3 data-edit="learning3Title">Modern Robotics Specialization</h3><p data-edit="learning3Text">Northwestern University · Currently pursuing</p></div></div>
-          <div class="learning-item"><span class="learning-icon">04</span><div><h3>Elements of AI</h3><p>University of Helsinki · Completed</p></div></div>
-          <div class="learning-item"><span class="learning-icon">05</span><div><h3>AI Elements</h3><p>Riphah University · Completed</p></div></div>
+            </div>
+            <div class="project__steps">
+              <h4>How it works</h4>
+              <ol class="flow" role="list">
+                <li><strong>Ingest and clean.</strong> A new form submission is normalized.</li>
+                <li><strong>Qualify with AI.</strong> A GPT model scores the lead and labels it Hot, Warm, or Cold.</li>
+                <li><strong>Save and reply.</strong> The lead is added to Google Sheets and receives an email.</li>
+                <li><strong>Notify sales.</strong> The team is alerted according to lead priority.</li>
+              </ol>
+            </div>
+          </div>
+        </article>
+
+        <article class="project" aria-labelledby="p-support" data-attach="support" data-attach-label="Project: AI Customer Support Email Agent">
+          <div class="project__shot">
+            <img
+              src="assets/customer-support-email-agent-1200.webp"
+              srcset="assets/customer-support-email-agent-1200.webp 1200w, assets/customer-support-email-agent.webp 2048w"
+              sizes="(max-width: 1120px) 100vw, 1120px"
+              width="2048" height="853" loading="lazy"
+              alt="Workflow editor showing an AI customer support email agent: a Gmail trigger, email cleaning and validation, an AI support agent, a human review check, Gmail replies or support team alerts, and Google Sheets logging.">
+          </div>
+          <div class="project__body">
+            <div>
+              <p class="project__kind" data-edit="supportKind" data-label="Support email agent: category" data-group="Projects">Workflow automation</p>
+              <h3 class="project__title" id="p-support" data-edit="supportTitle" data-label="Support email agent: title" data-group="Projects">AI Customer Support Email Agent</h3>
+              <p data-edit="supportDesc" data-label="Support email agent: description" data-group="Projects">An email-handling workflow that receives customer inquiries from Gmail, cleans and validates the content, and uses an AI support agent to prepare a response. Cases that need human review are sent to the support team, other cases receive an automatic reply, invalid emails trigger an alert, and every outcome is logged to Google Sheets.</p>
+              <ul class="tags" aria-label="Technologies" data-edit="supportTags" data-label="Support email agent: tags (one per line)" data-group="Projects" data-edit-type="list">
+                <li>n8n</li>
+                <li>OpenAI</li>
+                <li>Gmail</li>
+                <li>Google Sheets</li>
+              </ul>
+              <p class="project__zoom"><a href="assets/customer-support-email-agent.webp" target="_blank" rel="noopener noreferrer">Open full-size screenshot<span class="visually-hidden"> (opens in a new tab)</span></a></p>
+
+            </div>
+            <div class="project__steps">
+              <h4>How it works</h4>
+              <ol class="flow" role="list">
+                <li><strong>Receive.</strong> A Gmail trigger picks up each new customer email.</li>
+                <li><strong>Clean and validate.</strong> The email is structured and checked. Invalid emails raise an alert.</li>
+                <li><strong>Draft with AI.</strong> A support agent prepares the result.</li>
+                <li><strong>Route and log.</strong> The email goes to human review or receives an automatic reply, and the outcome is logged to Google Sheets.</li>
+              </ol>
+            </div>
+          </div>
+        </article>
+
+        <div class="project-grid">
+          <article class="project" aria-labelledby="p-pos" data-attach="pos" data-attach-label="Project: AQSA POS System Testing">
+            <span class="badge" data-edit="posBadge" data-label="AQSA POS testing: status label" data-group="Projects">Write-up not yet published</span>
+            <h3 id="p-pos" data-edit="posTitle" data-label="AQSA POS testing: title" data-group="Projects">AQSA POS System Testing</h3>
+            <p data-edit="posDesc" data-label="AQSA POS testing: description" data-group="Projects">Manual functional testing of a point-of-sale (POS) system, checking that its workflows behave as expected. The work includes:</p>
+            <ul class="project__list" data-edit="posList" data-label="AQSA POS testing: work covered (one per line)" data-group="Projects" data-edit-type="list">
+              <li>Executing test cases</li>
+              <li>Comparing expected and actual results</li>
+              <li>Identifying and reporting issues</li>
+              <li>Documenting test outcomes</li>
+            </ul>
+            <p class="project__note" data-edit="posNote" data-label="AQSA POS testing: note" data-group="Projects">A test summary will be added once approved details are available to share.</p>
+            <ul class="tags" aria-label="Focus areas" data-edit="posTags" data-label="AQSA POS testing: tags (one per line)" data-group="Projects" data-edit-type="list">
+              <li>Software testing</li>
+              <li>POS</li>
+              <li>Quality assurance</li>
+            </ul>
+          </article>
+
+          <article class="project" aria-labelledby="p-ckd" data-attach="ckd" data-attach-label="Project: CKD Screening AI">
+            <span class="badge" data-edit="ckdBadge" data-label="CKD Screening AI: status label" data-group="Projects">In progress</span>
+            <h3 id="p-ckd" data-edit="ckdTitle" data-label="CKD Screening AI: title" data-group="Projects">CKD Screening AI</h3>
+            <p data-edit="ckdDesc" data-label="CKD Screening AI: description" data-group="Projects">A demo exploring how AI can support screening and early risk assessment for chronic kidney disease (CKD). It is a demonstration project, not a medical or diagnostic tool.</p>
+            <p class="project__note" data-edit="ckdNote" data-label="CKD Screening AI: note" data-group="Projects">Demo visuals and a write-up will be added when they are ready.</p>
+            <ul class="tags" aria-label="Focus areas" data-edit="ckdTags" data-label="CKD Screening AI: tags (one per line)" data-group="Projects" data-edit-type="list">
+              <li>Artificial intelligence</li>
+              <li>Healthcare</li>
+              <li>Prototype</li>
+            </ul>
+          </article>
+
+          <article class="project" aria-labelledby="p-fire" data-attach="fire" data-attach-label="Project: Fire Chaser Extinguisher Robot">
+            <span class="badge" data-edit="fireBadge" data-label="Fire Chaser Robot: status label" data-group="Projects">In progress</span>
+            <h3 id="p-fire" data-edit="fireTitle" data-label="Fire Chaser Robot: title" data-group="Projects">Fire Chaser Extinguisher Robot</h3>
+            <p data-edit="fireDesc" data-label="Fire Chaser Robot: description" data-group="Projects">A robotics project built around a fire-detection and fire-response concept.</p>
+            <p class="project__note" data-edit="fireNote" data-label="Fire Chaser Robot: note" data-group="Projects">Technical details and build photos will be added as the project develops.</p>
+            <ul class="tags" aria-label="Focus areas" data-edit="fireTags" data-label="Fire Chaser Robot: tags (one per line)" data-group="Projects" data-edit-type="list">
+              <li>Robotics</li>
+              <li>Sensors</li>
+              <li>Embedded systems</li>
+            </ul>
+          </article>
         </div>
       </div>
-      <div class="learning-list cv-source-details"><div class="learning-item"><span class="learning-icon">SK</span><div><h3>Core Skills</h3><p>AI Automation · n8n &amp; Zapier · AI tools &amp; LLMs · Workflow Automation · Robotics &amp; Automation</p></div></div><div class="learning-item"><span class="learning-icon">LA</span><div><h3>Languages</h3><p>English — Fluent · Urdu — Native · French — Basic / Beginner</p></div></div></div>
     </section>
 
-    <section class="section managed-content-section" id="addedContent" hidden>
-      <div class="section-topline"><p class="eyebrow">05 / MORE</p><span class="section-note">ADDED CONTENT</span></div>
-      <div class="section-title-row"><h2>More of my <span>journey.</span></h2><p>Education, certificates, projects, and other selected items.</p></div>
-      <div id="publicManagedEntries" class="public-managed-entries"></div>
+    <section class="section" id="experience" aria-labelledby="experience-title">
+      <div class="wrap section__grid">
+        <h2 id="experience-title">Experience</h2>
+        <ul class="entries">
+          <li class="entry" data-attach="exp1" data-attach-label="Experience: Intern, AQSA IT Solutions">
+            <div class="entry__head">
+              <h3 class="entry__title" data-edit="exp1Title" data-label="Intern, AQSA IT Solutions: title" data-group="Experience">Intern</h3>
+            </div>
+            <p class="entry__org" data-edit="exp1Org" data-label="Intern, AQSA IT Solutions: institution or organization" data-group="Experience">AQSA IT Solutions</p>
+            <p class="entry__text" data-edit="exp1Text" data-label="Intern, AQSA IT Solutions: description" data-group="Experience">Internship connected to practical IT work and software quality.</p>
+          </li>
+          <li class="entry" data-attach="exp2" data-attach-label="Experience: Teacher, The Educators">
+            <div class="entry__head">
+              <h3 class="entry__title" data-edit="exp2Title" data-label="Teacher, The Educators: title" data-group="Experience">Teacher</h3>
+              <p class="entry__when" data-edit="exp2When" data-label="Teacher, The Educators: dates" data-group="Experience">6 months</p>
+            </div>
+            <p class="entry__org" data-edit="exp2Org" data-label="Teacher, The Educators: institution or organization" data-group="Experience">The Educators</p>
+            <p class="entry__text" data-edit="exp2Text" data-label="Teacher, The Educators: description" data-group="Experience">Developed professional communication, responsibility, organization, and classroom-management skills while working directly with students.</p>
+          </li>
+          <li class="entry" data-attach="exp3" data-attach-label="Experience: Teacher, Science Valley">
+            <div class="entry__head">
+              <h3 class="entry__title" data-edit="exp3Title" data-label="Teacher, Science Valley: title" data-group="Experience">Teacher</h3>
+              <p class="entry__when" data-edit="exp3When" data-label="Teacher, Science Valley: dates" data-group="Experience">October 2025 to 2026</p>
+            </div>
+            <p class="entry__org" data-edit="exp3Org" data-label="Teacher, Science Valley: institution or organization" data-group="Experience">Science Valley</p>
+            <p class="entry__text" data-edit="exp3Text" data-label="Teacher, Science Valley: description" data-group="Experience">Built practical workplace experience through teaching, communication, organization, and time management, and handled day-to-day professional duties.</p>
+          </li>
+        </ul>
+      </div>
     </section>
-    <section class="section contact-section" id="contact">
-      <div class="contact-glow"></div><p class="eyebrow">05 / CONTACT</p>
-      <h2>Have an idea?<br><span>Let’s build it.</span></h2>
-      <p class="contact-copy">For AI, automation, robotics, or software testing opportunities, feel free to reach out.</p>
-      <a class="email-link" data-email-link href="mailto:kiranzahid188@gmail.com"><span data-edit="emailText">kiranzahid188@gmail.com</span> <span>↗</span></a>
-      <div class="contact-socials"><a href="https://www.linkedin.com/in/kiran-zahid-3a4a5a433" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://github.com/Nexus-Kinematics" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.fiverr.com/s/Vrrma2z" target="_blank" rel="noopener noreferrer">Fiverr ↗</a><a href="https://www.upwork.com/freelancers/~01c463310230087cd5?mp_source=share" target="_blank" rel="noopener noreferrer">Upwork ↗</a></div>
+
+    <section class="section" id="education" aria-labelledby="education-title">
+      <div class="wrap section__grid">
+        <h2 id="education-title">Education</h2>
+        <div>
+          <h3 class="subhead">Formal education</h3>
+          <ul class="entries">
+            <li class="entry" data-attach="edu1" data-attach-label="Education: Intermediate (ICS – Physics)">
+              <div class="entry__head">
+                <h4 class="entry__title" data-edit="edu1Title" data-label="Education: qualification" data-group="Education and courses">Intermediate (ICS – Physics)</h4>
+                <p class="entry__when" data-edit="edu1Status" data-label="Intermediate (ICS – Physics): status" data-group="Education and courses">Completed 2025</p>
+              </div>
+              <p class="entry__org" data-edit="edu1Org" data-label="Education: institution" data-group="Education and courses">Pakistan Girls College Dina</p>
+            </li>
+          </ul>
+
+          <h3 class="subhead">Courses and training</h3>
+          <ul class="entries">
+            <li class="entry" data-attach="course1" data-attach-label="Course: Modern Robotics Specialization">
+              <div class="entry__head">
+                <h4 class="entry__title" data-edit="course1Title" data-label="Modern Robotics Specialization: title" data-group="Education and courses">Modern Robotics Specialization</h4>
+                <p class="entry__when entry__status--active" data-edit="course1Status" data-label="Modern Robotics: status" data-group="Education and courses">Currently pursuing</p>
+              </div>
+              <p class="entry__org" data-edit="course1Org" data-label="Modern Robotics Specialization: institution or organization" data-group="Education and courses">Northwestern University</p>
+            </li>
+            <li class="entry" data-attach="course2" data-attach-label="Course: AI Mastery">
+              <div class="entry__head">
+                <h4 class="entry__title" data-edit="course2Title" data-label="AI Mastery: title" data-group="Education and courses">AI Mastery</h4>
+                <p class="entry__when" data-edit="course2Status" data-label="AI Mastery: status" data-group="Education and courses">Completed</p>
+              </div>
+              <p class="entry__org" data-edit="course2Org" data-label="AI Mastery: institution or organization" data-group="Education and courses">AQSA IT Solutions</p>
+            </li>
+            <li class="entry" data-attach="course3" data-attach-label="Course: Elements of AI">
+              <div class="entry__head">
+                <h4 class="entry__title" data-edit="course3Title" data-label="Elements of AI: title" data-group="Education and courses">Elements of AI</h4>
+                <p class="entry__when" data-edit="course3Status" data-label="Elements of AI: status" data-group="Education and courses">Completed</p>
+              </div>
+              <p class="entry__org" data-edit="course3Org" data-label="Elements of AI: institution or organization" data-group="Education and courses">University of Helsinki</p>
+            </li>
+            <li class="entry" data-attach="course4" data-attach-label="Course: AI Elements">
+              <div class="entry__head">
+                <h4 class="entry__title" data-edit="course4Title" data-label="AI Elements: title" data-group="Education and courses">AI Elements</h4>
+                <p class="entry__when" data-edit="course4Status" data-label="AI Elements: status" data-group="Education and courses">Completed</p>
+              </div>
+              <p class="entry__org" data-edit="course4Org" data-label="AI Elements: institution or organization" data-group="Education and courses">Riphah University</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="addedContent" aria-labelledby="added-title" hidden>
+      <div class="wrap section__grid">
+        <h2 id="added-title">More</h2>
+        <div class="managed-list" id="publicManagedEntries"></div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="wrap section__grid">
+        <h2 id="contact-title">Contact</h2>
+        <div>
+          <p class="contact__copy">For opportunities in AI automation, robotics, or software testing, email me or connect on LinkedIn.</p>
+          <a class="contact__email" data-edit="emailText" data-label="Contact email" data-group="Profile and about" href="mailto:kiranzahid188@gmail.com">kiranzahid188@gmail.com</a>
+          <p class="contact__meta">Availability: part-time, night shifts, and weekends.</p>
+          <ul class="link-list" aria-label="Profiles">
+            <li><a href="https://www.linkedin.com/in/kiran-zahid-3a4a5a433" target="_blank" rel="noopener noreferrer">LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+            <li><a href="https://github.com/Nexus-Kinematics" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+            <li><a href="https://www.fiverr.com/s/Vrrma2z" target="_blank" rel="noopener noreferrer">Fiverr<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+            <li><a href="https://www.upwork.com/freelancers/~01c463310230087cd5?mp_source=share" target="_blank" rel="noopener noreferrer">Upwork<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+          </ul>
+        </div>
+      </div>
     </section>
   </main>
 
-  <div class="dashboard-backdrop" id="dashboardBackdrop" hidden></div>
-  <aside class="personal-dashboard" id="personalDashboard" aria-labelledby="dashboardTitle" aria-hidden="true">
-    <div class="dashboard-head"><div><p class="eyebrow">LOCAL EDITOR</p><h2 id="dashboardTitle">Personal dashboard</h2><p class="dashboard-subtitle">Edit your portfolio content on this device.</p></div><button id="dashboardClose" class="dashboard-close" aria-label="Close dashboard">×</button></div>
-    <form id="dashboardLogin" class="dashboard-login">
-      <div class="dashboard-notice"><strong>Sign in to edit your portfolio</strong><br>Enter your dashboard credentials to continue.</div>
-      <label class="editor-field"><span>Username</span><input id="dashboardUsername" name="username" type="text" autocomplete="username" required></label>
-      <label class="editor-field"><span>Password</span><input id="dashboardPassword" name="password" type="password" autocomplete="current-password" required></label>
-      <button class="button button-primary" type="submit">Log in</button>
-      <p id="loginMessage" class="save-message" role="alert"></p>
-    </form>
-    <form id="portfolioEditor" hidden>
-      <section class="editor-group">
-        <h3>Profile photo &amp; portfolio link</h3>
-        <label class="editor-field"><span>Change profile picture</span><input id="profileUpload" type="file" accept="image/*"></label>
-        <p class="dashboard-subtitle">Choose a JPG, PNG, or WebP image. The picture is saved in this browser.</p>
-        <label class="editor-field"><span>Portfolio website URL (optional until published)</span><input id="portfolioUrl" name="portfolioUrl" type="url" placeholder="https://your-live-portfolio-url"></label>
-      </section>
-      <section class="editor-group">
-        <h3>CV editor</h3>
-        <p class="dashboard-subtitle">These fields are used to create a downloadable PDF CV. Details below are prefilled from your existing CV file; edit any field as needed.</p>
-        <label class="editor-field"><span>Phone</span><input id="cvPhone" type="text" value="03187977782"></label>
-        <label class="editor-field"><span>Location</span><input id="cvLocation" type="text" value="Dina, District Jhelum, Punjab, Pakistan"></label>
-        <label class="editor-field"><span>Professional summary</span><textarea id="cvSummary">Emerging technology professional focused on AI Automation, n8n, Zapier, AI tools &amp; LLMs, workflow automation, and robotics. Building practical portfolio projects while pursuing the Modern Robotics Specialization from Northwestern University. Brings professional workplace experience from teaching, combined with hands-on learning in AI automation and robotics.</textarea></label>
-        <label class="editor-field"><span>Core skills (separate with commas)</span><textarea id="cvSkills">AI Automation, n8n &amp; Zapier, AI Tools &amp; LLMs, Workflow Automation, Robotics &amp; Automation</textarea></label>
-        <label class="editor-field"><span>Education history</span><textarea id="cvEducation">Intermediate (ICS – Physics) — Pakistan Girls College Dina — Completed 2025</textarea></label>
-        <label class="editor-field"><span>Certifications &amp; specialized learning</span><textarea id="cvCertifications">Modern Robotics Specialization — Northwestern University — Currently pursuing
-AI Mastery — AQSA IT SOLUTIONS — Completed
-Elements of AI — University of Helsinki — Completed
-AI Elements — Riphah University — Completed</textarea></label>
-        <label class="editor-field"><span>Professional experience</span><textarea id="cvExperience">Teacher — The Educators — 6 months
-• Developed professional communication, responsibility, organization, and classroom-management skills.
-• Worked directly with students while maintaining a structured and professional learning environment.
+  <dialog class="dashboard" id="dashboard" aria-labelledby="dashboardTitle">
+    <div class="dashboard__inner">
+      <div class="dashboard__head">
+        <div>
+          <h2 id="dashboardTitle">Personal dashboard</h2>
+          <p class="dashboard__note">Changes are saved in this browser only. They do not change the website for other visitors.</p>
+        </div>
+        <button class="btn btn--secondary" id="dashboardClose" type="button">Close</button>
+      </div>
 
-Teacher — Science Valley — October 2025 – 2026 (1 year)
-• Built practical workplace experience through teaching, communication, organization, and time management.
-• Worked responsibly with students and handled day-to-day professional duties.</textarea></label>
-        <label class="editor-field"><span>Languages</span><textarea id="cvLanguages">English — Fluent
-Urdu — Native
-French — Basic / Beginner</textarea></label>
-        <label class="editor-field"><span>Availability (optional)</span><input id="cvAvailability" type="text" value="Part-time · Night shifts · Weekends"></label>
-      </section>
-      <section class="editor-group">
-        <h3>Add to your portfolio (all optional)</h3>
-        <p class="dashboard-subtitle">Add as many entries as you like. You can attach a picture, video, document, or link, or leave attachments empty.</p>
-        <label class="editor-field"><span>What are you adding?</span><select id="entryType" class="entry-control"><option value="education">Education history</option><option value="certificate">Certificate</option><option value="project">Project</option><option value="extra">Other / extra item</option></select></label>
-        <label class="editor-field"><span>Title</span><input id="entryTitle" class="entry-control" type="text" placeholder="e.g. Python course certificate"></label>
-        <label class="editor-field"><span>Description / details</span><textarea id="entryDescription" class="entry-control" placeholder="Optional details, dates, skills, project summary..."></textarea></label>
-        <label class="editor-field"><span>Link (optional)</span><input id="entryLink" class="entry-control" type="url" placeholder="https://..."></label>
-        <label class="editor-field"><span>Picture, video, or document (optional)</span><input id="entryFile" class="entry-control" type="file" accept="image/*,video/*,.pdf,.doc,.docx,.ppt,.pptx,.txt"></label>
-        <button class="button button-secondary" id="addEntryButton" type="button">＋ Add item</button>
-        <div id="managedEntries" class="managed-entries"></div>
-      </section>
-      <div id="editorFields"></div><div class="dashboard-actions"><button class="button button-primary" type="submit">Save changes</button><button class="button button-secondary" id="dashboardReset" type="button">Reset saved edits</button><button class="button button-secondary" id="dashboardLogout" type="button">Log out</button></div><p id="saveMessage" class="save-message" role="status"></p></form>
-  </aside>
-  <footer><a class="brand footer-brand" href="#home"><span class="brand-mark">K</span><span>KIRAN<span class="brand-dot">.</span></span></a><p>Designed around curiosity, built for what’s next.</p><span class="copyright">© <span id="year"></span> Kiran Zahid</span></footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="script.js"></script>
+      <form id="dashboardLogin" novalidate>
+        <div class="field"><label for="dashUser">Username</label><input id="dashUser" type="text" autocomplete="username" required></div>
+        <div class="field"><label for="dashPass">Password</label><input id="dashPass" type="password" autocomplete="current-password" required></div>
+        <button class="btn btn--primary" type="submit">Log in</button>
+        <p class="dashboard__msg" id="loginMessage" role="alert"></p>
+      </form>
+
+      <form id="portfolioEditor" hidden novalidate>
+        <fieldset class="editor-group">
+          <legend>Profile photo and portfolio link</legend>
+          <div class="field"><label for="profileUpload">Change profile picture (JPG, PNG, or WebP, up to 3 MB)</label><input id="profileUpload" type="file" accept="image/png,image/jpeg,image/webp"></div>
+          <div class="field"><label for="portfolioUrl">Portfolio website URL</label><input id="portfolioUrl" type="url" placeholder="https://nexus-kinematics.github.io/Kiranzahid_portfolio/"></div>
+        </fieldset>
+
+        <div id="editorFields"></div>
+
+        <fieldset class="editor-group">
+          <legend>CV details (used on the CV page)</legend>
+          <div class="field"><label for="cvPhone">Phone</label><input id="cvPhone" type="text"></div>
+          <div class="field"><label for="cvLocation">Location</label><input id="cvLocation" type="text"></div>
+          <div class="field"><label for="cvSummary">Professional summary</label><textarea id="cvSummary" rows="5"></textarea></div>
+          <div class="field"><label for="cvSkills">Core skills (separate with commas)</label><textarea id="cvSkills" rows="3"></textarea></div>
+          <div class="field"><label for="cvEducation">Education history</label><textarea id="cvEducation" rows="3"></textarea></div>
+          <div class="field"><label for="cvCertifications">Courses and training</label><textarea id="cvCertifications" rows="5"></textarea></div>
+          <div class="field"><label for="cvExperience">Professional experience</label><textarea id="cvExperience" rows="9"></textarea></div>
+          <div class="field"><label for="cvLanguages">Languages</label><textarea id="cvLanguages" rows="3"></textarea></div>
+          <div class="field"><label for="cvAvailability">Availability</label><input id="cvAvailability" type="text"></div>
+          <p class="dashboard__note"><a href="cv.html" target="_blank" rel="noopener noreferrer">Open the CV page<span class="visually-hidden"> (opens in a new tab)</span></a> to print or save it as a PDF with these details.</p>
+        </fieldset>
+
+        <fieldset class="editor-group">
+          <legend>Pictures, videos, and PDFs for existing items</legend>
+          <p class="dashboard__note">Attach a file to a project, education entry, course, or experience entry. It appears on that item.</p>
+          <div class="field"><label for="attachTarget">Attach to</label><select id="attachTarget"></select></div>
+          <div class="field"><label for="attachFile">Picture, video, or PDF (under 1.8 MB)</label><input id="attachFile" type="file" accept="image/png,image/jpeg,image/webp,image/gif,video/mp4,video/webm,application/pdf"></div>
+          <div class="field"><label for="attachCaption">Caption (optional)</label><input id="attachCaption" type="text"></div>
+          <button class="btn btn--secondary" id="attachButton" type="button">Attach file</button>
+          <ul class="managed-admin" id="attachmentList"></ul>
+        </fieldset>
+
+        <fieldset class="editor-group">
+          <legend>Add to your portfolio (all optional)</legend>
+          <div class="field"><label for="entryType">What are you adding?</label>
+            <select id="entryType"><option value="education">Education history</option><option value="certificate">Certificate</option><option value="project">Project</option><option value="extra">Other item</option></select></div>
+          <div class="field"><label for="entryTitle">Title</label><input id="entryTitle" type="text"></div>
+          <div class="field"><label for="entryDescription">Description</label><textarea id="entryDescription" rows="3"></textarea></div>
+          <div class="field"><label for="entryLink">Link (https://)</label><input id="entryLink" type="url"></div>
+          <div class="field"><label for="entryFile">Picture, video, or document (under 1.8 MB)</label><input id="entryFile" type="file" accept="image/png,image/jpeg,image/webp,image/gif,video/mp4,video/webm,.pdf,.doc,.docx,.ppt,.pptx,.txt"></div>
+          <button class="btn btn--secondary" id="addEntryButton" type="button">Add item</button>
+          <ul class="managed-admin" id="managedEntries"></ul>
+        </fieldset>
+
+        <div class="dashboard__actions">
+          <button class="btn btn--primary" type="submit">Save changes</button>
+          <button class="btn btn--secondary" id="dashboardReset" type="button">Reset saved edits</button>
+          <button class="btn btn--secondary" id="dashboardLogout" type="button">Log out</button>
+        </div>
+        <p class="dashboard__msg" id="saveMessage" role="status"></p>
+      </form>
+    </div>
+  </dialog>
+
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <p>&copy; <span id="year">2026</span> Kiran Zahid</p>
+      <ul class="link-list" aria-label="Footer">
+        <li><a href="Kiran-Zahid-CV.pdf" download>Download CV (PDF)</a></li>
+        <li><a href="#top">Back to top</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
 </body>
 </html>

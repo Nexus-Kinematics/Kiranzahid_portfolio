@@ -1,226 +1,504 @@
-const menuToggle = document.getElementById('menuToggle');
-const nav = document.getElementById('nav');
-menuToggle.addEventListener('click', () => {
-  const isOpen = nav.classList.toggle('open');
-  menuToggle.setAttribute('aria-expanded', String(isOpen));
-  menuToggle.textContent = isOpen ? '✕' : '☰';
-});
-nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-  nav.classList.remove('open'); menuToggle.setAttribute('aria-expanded', 'false'); menuToggle.textContent = '☰';
-}));
-document.getElementById('year').textContent = new Date().getFullYear();
+/* Kiran Zahid portfolio: small progressive enhancements.
+   The page is fully readable and navigable without this file. */
+(function () {
+  'use strict';
 
-// Browser-local personal dashboard: editable text is stored in localStorage.
-const dashboard = document.getElementById('personalDashboard');
-const backdrop = document.getElementById('dashboardBackdrop');
-const editorFields = document.getElementById('editorFields');
-const editorForm = document.getElementById('portfolioEditor');
-const loginForm = document.getElementById('dashboardLogin');
-const loginMessage = document.getElementById('loginMessage');
-const DASHBOARD_USERNAME = 'kiran12345';
-const DASHBOARD_PASSWORD = 'kiran123@#zahid';
-let dashboardAuthenticated = false;
-const saveMessage = document.getElementById('saveMessage');
-const STORAGE_KEY = 'kiranPortfolioEditsV1';
+  var toggle = document.getElementById('navToggle');
+  var nav = document.getElementById('siteNav');
+  var links = Array.prototype.slice.call(document.querySelectorAll('.nav__link'));
+  var mobileQuery = window.matchMedia('(max-width: 900px)');
 
-// CV editor fields are stored independently and feed the generated PDF.
-const CV_STORAGE_KEY='kiranPortfolioCVFieldsV2';
-const cvFieldIds=['cvPhone','cvLocation','cvSummary','cvSkills','cvEducation','cvCertifications','cvExperience','cvLanguages','cvAvailability'];
-function loadCVFields(){try{const saved=JSON.parse(localStorage.getItem(CV_STORAGE_KEY)||'{}');cvFieldIds.forEach(id=>{const el=document.getElementById(id);if(el&&Object.prototype.hasOwnProperty.call(saved,id))el.value=saved[id];});}catch(e){}}
-function saveCVFields(){const values={};cvFieldIds.forEach(id=>{const el=document.getElementById(id);if(el)values[id]=el.value.trim();});try{localStorage.setItem(CV_STORAGE_KEY,JSON.stringify(values));}catch(e){}return values;}
+  // Footer year
+  var year = document.getElementById('year');
+  if (year) { year.textContent = String(new Date().getFullYear()); }
 
-const labels = {
- heroName:'Name heading', heroRole:'Professional title', heroDescription:'Intro / headline description',
- aboutLead:'About headline', aboutText:'About paragraph', experienceTitle:'Internship / experience title', experienceText:'Experience description',
- learning1Title:'Education heading', learning1Text:'Education details', learning2Title:'AI Mastery heading', learning2Text:'AI Mastery details', learning3Title:'Modern Robotics heading', learning3Text:'Modern Robotics details', emailText:'Contact email',
- project1Title:'CKD Screening AI — title', project1Description:'CKD Screening AI — description', project1Status:'CKD Screening AI — status',
- project2Title:'Lead Qualification — title', project2Description:'Lead Qualification — description',
- project3Title:'Customer Support Agent — title', project3Description:'Customer Support Agent — description',
- project4Title:'AQSA POS Testing — title', project4Description:'AQSA POS Testing — description', project4Status:'AQSA POS Testing — status',
- project5Title:'Fire Chaser Robot — title', project5Description:'Fire Chaser Robot — description', project5Status:'Fire Chaser Robot — status'
-};
-const groups = {
- 'Profile & About':['heroName','heroRole','heroDescription','aboutLead','aboutText','emailText'],
- 'Projects — edit titles, descriptions, and statuses':['project1Title','project1Description','project1Status','project2Title','project2Description','project3Title','project3Description','project4Title','project4Description','project4Status','project5Title','project5Description','project5Status'],
- 'Experience & Learning':['experienceTitle','experienceText','learning1Title','learning1Text','learning2Title','learning2Text','learning3Title','learning3Text']
-};
-function getEditableNodes(){ return [...document.querySelectorAll('[data-edit]')]; }
-function loadEdits(){
-  let saved={}; try{ saved=JSON.parse(localStorage.getItem(STORAGE_KEY)||'{}'); }catch(e){}
-  getEditableNodes().forEach(node=>{ const key=node.dataset.edit; if(Object.prototype.hasOwnProperty.call(saved,key)) node.textContent=saved[key]; });
-  loadCVFields();
-  const portfolioUrlInput=document.getElementById('portfolioUrl');
-  if(portfolioUrlInput) portfolioUrlInput.value=saved.portfolioUrl||localStorage.getItem('kiranPortfolioUrlV1')||'';
-  const savedPhoto=localStorage.getItem('kiranProfilePhotoV1');
-  if(savedPhoto){const pic=document.getElementById('profilePicture'); if(pic)pic.src=savedPhoto;}
-  const email=document.querySelector('[data-email-link]'); const text=document.querySelector('[data-edit="emailText"]');
-  if(email && text) email.href='mailto:'+text.textContent.trim();
-}
-function buildEditor(){
-  editorFields.innerHTML='';
-  Object.entries(groups).forEach(([groupName,keys])=>{
-    const section=document.createElement('section'); section.className='editor-group';
-    const heading=document.createElement('h3'); heading.textContent=groupName; section.appendChild(heading);
-    keys.forEach(key=>{
-      const node=document.querySelector(`[data-edit="${key}"]`); if(!node)return;
-      const label=document.createElement('label'); label.className='editor-field';
-      const caption=document.createElement('span'); caption.textContent=labels[key]||key; label.appendChild(caption);
-      const input=(key.toLowerCase().includes('description')||key.toLowerCase().includes('text')||key==='heroRole'||key==='aboutLead')?document.createElement('textarea'):document.createElement('input');
-      if(input.tagName==='INPUT') input.type='text'; input.name=key; input.value=node.textContent.trim();
-      label.appendChild(input); section.appendChild(label);
-    }); editorFields.appendChild(section);
+  // Mobile menu
+  function setMenu(open) {
+    if (!toggle || !nav) { return; }
+    nav.classList.toggle('is-open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.textContent = open ? 'Close' : 'Menu';
+  }
+
+  if (toggle && nav) {
+    toggle.addEventListener('click', function () {
+      setMenu(!nav.classList.contains('is-open'));
+    });
+
+    links.forEach(function (link) {
+      link.addEventListener('click', function () { setMenu(false); });
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && nav.classList.contains('is-open')) {
+        setMenu(false);
+        toggle.focus();
+      }
+    });
+
+    // Reset when the viewport grows past the mobile breakpoint
+    var onBreakpoint = function (event) { if (!event.matches) { setMenu(false); } };
+    if (mobileQuery.addEventListener) { mobileQuery.addEventListener('change', onBreakpoint); }
+    else if (mobileQuery.addListener) { mobileQuery.addListener(onBreakpoint); }
+  }
+
+  // Highlight the nav link for the section currently in view
+  var sections = links
+    .map(function (link) { return document.querySelector(link.getAttribute('href')); })
+    .filter(Boolean);
+
+  function updateActive() {
+    var marker = window.innerHeight * 0.35;
+    var current = null;
+    sections.forEach(function (section) {
+      if (section.getBoundingClientRect().top <= marker) { current = section; }
+    });
+    var atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+    if (atBottom && sections.length) { current = sections[sections.length - 1]; }
+    links.forEach(function (link) {
+      var active = current && link.getAttribute('href') === '#' + current.id;
+      if (active) { link.setAttribute('aria-current', 'true'); }
+      else { link.removeAttribute('aria-current'); }
+    });
+  }
+
+  var ticking = false;
+  function onScroll() {
+    if (ticking) { return; }
+    ticking = true;
+    window.requestAnimationFrame(function () { updateActive(); ticking = false; });
+  }
+
+  if (sections.length) {
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    updateActive();
+  }
+})();
+
+/* ==========================================================================
+   Personal dashboard (local editor)
+   - Edits are saved in this browser's localStorage only. They never change the
+     website for other visitors; to change the public site, edit the files.
+   - Login: the username and password are not stored in this file. Only a
+     SHA-256 hash is, so this is a convenience lock, not real security.
+   ========================================================================== */
+(function () {
+  'use strict';
+
+  var AUTH_HASH = 'bac82dfbc320db992c07a545c0085044cb27084aecdc7449b44ff97940db4573';
+  var KEYS = {
+    edits: 'kiranPortfolioEditsV1',
+    cv: 'kiranPortfolioCVFieldsV2',
+    photo: 'kiranProfilePhotoV1',
+    url: 'kiranPortfolioUrlV1',
+    entries: 'kiranPortfolioManagedEntriesV1',
+    attach: 'kiranPortfolioAttachmentsV1'
+  };
+  // Keys used by the previous version of the dashboard, so saved edits carry over
+  var ALIAS = {
+    heroDescription: 'heroIntro', aboutText: 'aboutText1',
+    project2Title: 'leadTitle', project2Description: 'leadDesc',
+    project3Title: 'supportTitle', project3Description: 'supportDesc',
+    project4Title: 'posTitle', project4Description: 'posDesc',
+    project1Title: 'ckdTitle', project1Description: 'ckdDesc',
+    project5Title: 'fireTitle', project5Description: 'fireDesc',
+    experienceText: 'exp1Text', learning1Title: 'edu1Title'
+  };
+  var CV_DEFAULTS = {
+    cvPhone: '',
+    cvLocation: 'Punjab, Pakistan',
+    cvSummary: 'Emerging technology professional focused on AI automation, n8n, Zapier, AI tools and LLMs, workflow automation, and robotics. Building practical portfolio projects while pursuing the Modern Robotics Specialization from Northwestern University. Brings professional workplace experience from teaching, combined with hands-on learning in AI automation, robotics, and software testing.',
+    cvSkills: 'AI automation, n8n and Zapier, AI tools and LLMs, Workflow automation, Robotics and automation, Manual functional testing',
+    cvEducation: 'Intermediate (ICS – Physics) — Pakistan Girls College Dina — Completed 2025',
+    cvCertifications: 'Modern Robotics Specialization — Northwestern University — Currently pursuing\nAI Mastery — AQSA IT Solutions — Completed\nElements of AI — University of Helsinki — Completed\nAI Elements — Riphah University — Completed',
+    cvExperience: 'Teacher — Science Valley — October 2025 to 2026\n• Built practical workplace experience through teaching, communication, organization, and time management.\n• Worked responsibly with students and handled day-to-day professional duties.\n\nTeacher — The Educators — 6 months\n• Developed professional communication, responsibility, organization, and classroom-management skills.\n• Worked directly with students in a structured and professional learning environment.\n\nIntern — AQSA IT Solutions\n• Internship connected to practical IT work and software quality.',
+    cvLanguages: 'English — Fluent\nUrdu — Native\nFrench — Basic',
+    cvAvailability: 'Part-time, night shifts, and weekends.'
+  };
+  var CV_IDS = Object.keys(CV_DEFAULTS);
+
+  var dlg = document.getElementById('dashboard');
+  if (!dlg || typeof dlg.showModal !== 'function') {
+    var hide = document.getElementById('dashboardOpen');
+    if (hide) { hide.parentNode.hidden = true; }
+    return;
+  }
+
+  var openBtn = document.getElementById('dashboardOpen');
+  var loginForm = document.getElementById('dashboardLogin');
+  var editorForm = document.getElementById('portfolioEditor');
+  var loginMsg = document.getElementById('loginMessage');
+  var saveMsg = document.getElementById('saveMessage');
+  var editorFields = document.getElementById('editorFields');
+  var authed = false;
+
+  /* ---- helpers ---- */
+  function read(key, fallback) {
+    try { var v = JSON.parse(localStorage.getItem(key)); return v == null ? fallback : v; }
+    catch (e) { return fallback; }
+  }
+  function write(key, value) {
+    try { localStorage.setItem(key, JSON.stringify(value)); return true; } catch (e) { return false; }
+  }
+  function el(tag, cls, text) {
+    var node = document.createElement(tag);
+    if (cls) { node.className = cls; }
+    if (text != null) { node.textContent = text; }
+    return node;
+  }
+  function safeHttp(url) { return typeof url === 'string' && /^https?:\/\/[^\s]+$/i.test(url.trim()); }
+  function isEmail(v) { return /^[^\s@<>"']+@[^\s@<>"']+\.[^\s@<>"']+$/.test(v); }
+  function sha256(text) {
+    return crypto.subtle.digest('SHA-256', new TextEncoder().encode(text)).then(function (buf) {
+      return Array.prototype.map.call(new Uint8Array(buf), function (b) { return ('0' + b.toString(16)).slice(-2); }).join('');
+    });
+  }
+
+  var MEDIA_OK = /^(image\/(png|jpeg|webp|gif)|video\/(mp4|webm)|application\/pdf)$/;
+
+  function openPdf(data) {
+    try {
+      var bin = atob(data.split(',')[1]); var arr = new Uint8Array(bin.length);
+      for (var i = 0; i < bin.length; i++) { arr[i] = bin.charCodeAt(i); }
+      var url = URL.createObjectURL(new Blob([arr], { type: 'application/pdf' }));
+      var a = document.createElement('a'); a.href = url; a.target = '_blank'; a.rel = 'noopener';
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function () { URL.revokeObjectURL(url); }, 60000);
+    } catch (err) { window.alert('This PDF could not be opened.'); }
+  }
+
+  // Builds a safe element for an attached picture, video, PDF, or other file
+  function buildMedia(data, name, caption) {
+    var label = caption || name || 'Attachment';
+    var wrap;
+    if (/^data:image\/(png|jpe?g|gif|webp);base64,/i.test(data)) {
+      wrap = el('figure', 'attachment');
+      var im = el('img', 'attachment__media managed__media'); im.src = data; im.alt = label; wrap.appendChild(im);
+    } else if (/^data:video\/(mp4|webm);base64,/i.test(data)) {
+      wrap = el('figure', 'attachment');
+      var v = el('video', 'attachment__media managed__media'); v.src = data; v.controls = true; v.preload = 'metadata';
+      v.setAttribute('aria-label', label); wrap.appendChild(v);
+    } else if (/^data:application\/pdf;base64,/i.test(data)) {
+      wrap = el('div', 'attachment');
+      var b = el('button', 'btn btn--secondary', 'Open PDF: ' + label); b.type = 'button';
+      b.addEventListener('click', function () { openPdf(data); }); wrap.appendChild(b);
+      return wrap;
+    } else if (/^data:[a-z0-9.+\-\/]+;base64,/i.test(data)) {
+      wrap = el('div', 'attachment');
+      var a = el('a', 'managed__link', 'Download ' + label); a.href = data; a.download = name || 'attachment'; wrap.appendChild(a);
+      return wrap;
+    } else { return null; }
+    if (caption) { wrap.appendChild(el('figcaption', null, caption)); }
+    return wrap;
+  }
+
+  /* ---- apply saved edits to the page ---- */
+  var nodes = Array.prototype.slice.call(document.querySelectorAll('[data-edit]'));
+  var targets = Array.prototype.slice.call(document.querySelectorAll('[data-attach]'));
+
+  // Simple fields hold text. "list" fields (tags, bullet lists) hold one item per line.
+  function getVal(n) {
+    if (n.dataset.editType === 'list') {
+      return Array.prototype.map.call(n.children, function (li) { return li.textContent.trim(); }).join('\n');
+    }
+    return n.textContent.trim();
+  }
+  function setVal(n, v) {
+    if (n.dataset.editType === 'list') {
+      n.textContent = '';
+      v.split(/\r?\n/).forEach(function (line) { line = line.trim(); if (line) { n.appendChild(el('li', null, line)); } });
+    } else { n.textContent = v; }
+  }
+  nodes.forEach(function (n) { n.dataset.default = getVal(n); });
+
+  function syncEmail() {
+    var a = document.querySelector('.contact__email');
+    if (!a) { return; }
+    var v = a.textContent.trim();
+    if (isEmail(v)) { a.href = 'mailto:' + v; }
+  }
+
+  function applyEdits() {
+    var saved = read(KEYS.edits, {});
+    Object.keys(ALIAS).forEach(function (old) {
+      if (typeof saved[old] === 'string' && saved[ALIAS[old]] === undefined) { saved[ALIAS[old]] = saved[old]; }
+    });
+    nodes.forEach(function (n) {
+      var v = saved[n.dataset.edit];
+      if (typeof v === 'string' && v.trim()) { setVal(n, v); }
+    });
+    if (nodes.length) { syncEmail(); }
+    var photo = localStorage.getItem(KEYS.photo);
+    var img = document.querySelector('.portrait img');
+    if (img && photo && /^data:image\/(png|jpe?g|webp);base64,/i.test(photo)) {
+      img.removeAttribute('srcset');
+      img.src = photo;
+    }
+  }
+
+  /* ---- added items ("More" section) ---- */
+  var TYPE_LABELS = { education: 'Education', certificate: 'Certificate', project: 'Project', extra: 'More' };
+
+  function renderEntries() {
+    var entries = read(KEYS.entries, []);
+    var section = document.getElementById('addedContent');
+    var wrap = document.getElementById('publicManagedEntries');
+    var admin = document.getElementById('managedEntries');
+    if (section) { section.hidden = entries.length === 0; }
+    if (wrap) {
+      wrap.textContent = '';
+      entries.forEach(function (item) {
+        var card = el('article', 'managed');
+        card.appendChild(el('p', 'managed__type', TYPE_LABELS[item.type] || 'More'));
+        card.appendChild(el('h3', null, item.title || 'Untitled item'));
+        if (item.description) { card.appendChild(el('p', null, item.description)); }
+        var media = buildMedia(item.dataUrl || '', item.fileName, '');
+        if (media) { card.appendChild(media); }
+        if (safeHttp(item.link)) {
+          var l = el('a', 'managed__link', 'Open related link'); l.href = item.link.trim(); l.target = '_blank'; l.rel = 'noopener noreferrer';
+          var pl = el('p'); pl.appendChild(l); card.appendChild(pl);
+        }
+        wrap.appendChild(card);
+      });
+    }
+    if (admin) {
+      admin.textContent = '';
+      if (!entries.length) { admin.appendChild(el('li', 'dashboard__note', 'No added items yet.')); }
+      entries.forEach(function (item, index) {
+        var li = el('li', 'managed-admin__row');
+        li.appendChild(el('span', null, (item.title || 'Untitled item') + ' (' + (TYPE_LABELS[item.type] || 'More') + ')'));
+        var rm = el('button', 'btn btn--secondary', 'Remove');
+        rm.type = 'button'; rm.dataset.remove = String(index);
+        rm.setAttribute('aria-label', 'Remove ' + (item.title || 'untitled item'));
+        li.appendChild(rm); admin.appendChild(li);
+      });
+    }
+  }
+
+  /* ---- attachments on existing items ---- */
+  function renderAttachments() {
+    var store = read(KEYS.attach, {});
+    Array.prototype.forEach.call(document.querySelectorAll('.attachments'), function (n) { n.remove(); });
+    targets.forEach(function (t) {
+      var items = store[t.dataset.attach];
+      if (!Array.isArray(items) || !items.length) { return; }
+      var inner = !!t.closest('.project-grid') || t.classList.contains('entry');
+      var box = el('div', 'attachments' + (inner ? ' attachments--inner' : ''));
+      box.setAttribute('role', 'group'); box.setAttribute('aria-label', 'Attachments');
+      items.forEach(function (it) { var m = buildMedia(it.dataUrl || '', it.fileName, it.caption || ''); if (m) { box.appendChild(m); } });
+      if (box.children.length) { t.appendChild(box); }
+    });
+  }
+
+  function renderAttachmentAdmin() {
+    var store = read(KEYS.attach, {});
+    var list = document.getElementById('attachmentList');
+    var select = document.getElementById('attachTarget');
+    if (!select.options.length) {
+      targets.forEach(function (t) { var o = el('option', null, t.dataset.attachLabel || t.dataset.attach); o.value = t.dataset.attach; select.appendChild(o); });
+    }
+    list.textContent = '';
+    var count = 0;
+    targets.forEach(function (t) {
+      (store[t.dataset.attach] || []).forEach(function (it, index) {
+        count++;
+        var li = el('li', 'managed-admin__row');
+        li.appendChild(el('span', null, (t.dataset.attachLabel || t.dataset.attach) + ': ' + (it.fileName || 'file')));
+        var rm = el('button', 'btn btn--secondary', 'Remove'); rm.type = 'button';
+        rm.dataset.attachKey = t.dataset.attach; rm.dataset.attachIndex = String(index);
+        rm.setAttribute('aria-label', 'Remove ' + (it.fileName || 'file') + ' from ' + (t.dataset.attachLabel || t.dataset.attach));
+        li.appendChild(rm); list.appendChild(li);
+      });
+    });
+    if (!count) { list.appendChild(el('li', 'dashboard__note', 'No attachments yet.')); }
+  }
+
+  /* ---- editor ---- */
+  function buildEditor() {
+    var saved = read(KEYS.edits, {});
+    editorFields.textContent = '';
+    var groups = {};
+    nodes.forEach(function (n) {
+      var g = n.dataset.group || 'Other';
+      (groups[g] = groups[g] || []).push(n);
+    });
+    Object.keys(groups).forEach(function (name) {
+      var fs = el('fieldset', 'editor-group'); fs.appendChild(el('legend', null, name));
+      groups[name].forEach(function (n) {
+        var id = 'edit-' + n.dataset.edit;
+        var f = el('div', 'field');
+        var lab = el('label', null, n.dataset.label || n.dataset.edit); lab.htmlFor = id; f.appendChild(lab);
+        var current = getVal(n);
+        var isList = n.dataset.editType === 'list';
+        var input = (isList || current.length > 70) ? el('textarea') : el('input');
+        if (input.tagName === 'TEXTAREA') { input.rows = isList ? Math.min(8, current.split('\n').length + 1) : Math.min(10, Math.ceil(current.length / 38) + 1); } else { input.type = 'text'; }
+        input.id = id; input.name = n.dataset.edit; input.value = current;
+        f.appendChild(input); fs.appendChild(f);
+      });
+      editorFields.appendChild(fs);
+    });
+    var cv = read(KEYS.cv, {});
+    CV_IDS.forEach(function (id) {
+      var field = document.getElementById(id);
+      field.value = typeof cv[id] === 'string' ? cv[id] : CV_DEFAULTS[id];
+    });
+    document.getElementById('portfolioUrl').value = localStorage.getItem(KEYS.url) || saved.portfolioUrl || '';
+    renderEntries();
+    renderAttachmentAdmin();
+  }
+
+  function setMsg(node, text) { node.textContent = text; }
+
+  /* ---- open, close, login ---- */
+  function showLogin() {
+    authed = false;
+    loginForm.hidden = false; editorForm.hidden = true;
+    loginForm.reset(); setMsg(loginMsg, ''); setMsg(saveMsg, '');
+  }
+  openBtn.addEventListener('click', function () { showLogin(); dlg.showModal(); document.getElementById('dashUser').focus(); });
+  document.getElementById('dashboardClose').addEventListener('click', function () { dlg.close(); });
+  dlg.addEventListener('close', function () { showLogin(); openBtn.focus(); });
+  dlg.addEventListener('click', function (e) { if (e.target === dlg) { dlg.close(); } });
+
+  loginForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var user = document.getElementById('dashUser').value;
+    var pass = document.getElementById('dashPass').value;
+    if (!window.crypto || !crypto.subtle) {
+      setMsg(loginMsg, 'This browser cannot check the login here. Open the website over https and try again.');
+      return;
+    }
+    sha256(user + '\n' + pass).then(function (hash) {
+      if (hash === AUTH_HASH) {
+        authed = true; setMsg(loginMsg, '');
+        loginForm.hidden = true; editorForm.hidden = false;
+        buildEditor();
+        var first = editorForm.querySelector('input, textarea'); if (first) { first.focus(); }
+      } else {
+        setMsg(loginMsg, 'Incorrect username or password. Please try again.');
+        document.getElementById('dashPass').value = '';
+        document.getElementById('dashPass').focus();
+      }
+    });
   });
-}
-function openDashboard(){ loginForm.hidden=false; editorForm.hidden=true; loginForm.reset(); loginMessage.textContent=''; dashboard.classList.add('open'); dashboard.setAttribute('aria-hidden','false'); backdrop.hidden=false; document.body.style.overflow='hidden'; }
-function closeDashboard(){ dashboard.classList.remove('open'); dashboard.setAttribute('aria-hidden','true'); backdrop.hidden=true; document.body.style.overflow=''; dashboardAuthenticated=false; }
-document.getElementById('dashboardOpen').addEventListener('click',openDashboard);
-document.getElementById('dashboardClose').addEventListener('click',closeDashboard);
-backdrop.addEventListener('click',closeDashboard);
-loginForm.addEventListener('submit',e=>{
-  e.preventDefault();
-  const username=document.getElementById('dashboardUsername').value;
-  const password=document.getElementById('dashboardPassword').value;
-  if(username===DASHBOARD_USERNAME && password===DASHBOARD_PASSWORD){
-    dashboardAuthenticated=true; loginMessage.textContent=''; loginForm.hidden=true; editorForm.hidden=false; buildEditor();
-  } else { loginMessage.textContent='Incorrect username or password. Please try again.'; document.getElementById('dashboardPassword').value=''; }
-});
-document.getElementById('dashboardLogout').addEventListener('click',()=>{dashboardAuthenticated=false;openDashboard();});
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDashboard();});
-editorForm.addEventListener('submit',e=>{
-  e.preventDefault(); if(!dashboardAuthenticated)return; const saved={}; new FormData(editorForm).forEach((value,key)=>{saved[key]=String(value).trim();}); if(saved.portfolioUrl!==undefined)localStorage.setItem('kiranPortfolioUrlV1',saved.portfolioUrl);
-  getEditableNodes().forEach(node=>{if(Object.prototype.hasOwnProperty.call(saved,node.dataset.edit))node.textContent=saved[node.dataset.edit];});
-  const email=document.querySelector('[data-email-link]'); const emailText=document.querySelector('[data-edit="emailText"]'); if(email&&emailText)email.href='mailto:'+emailText.textContent.trim();
-  saveCVFields();
-  try{localStorage.setItem(STORAGE_KEY,JSON.stringify(saved));saveMessage.textContent='Saved on this browser. Refresh to confirm your changes.';}catch(err){saveMessage.textContent='Could not save in this browser. Check browser storage settings.';}
-  buildEditor();
-});
-document.getElementById('dashboardReset').addEventListener('click',()=>{
-  if(!confirm('Reset all saved portfolio edits in this browser? This restores the original text.'))return;
-  localStorage.removeItem(STORAGE_KEY); location.reload();
-});
-loadEdits();
+  document.getElementById('dashboardLogout').addEventListener('click', function () { dlg.close(); });
 
+  /* ---- save and reset ---- */
+  editorForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!authed) { return; }
+    var saved = {};
+    nodes.forEach(function (n) {
+      var field = document.getElementById('edit-' + n.dataset.edit);
+      var v = field ? field.value.trim() : '';
+      if (v && v !== n.dataset.default) { saved[n.dataset.edit] = v; }
+    });
+    if (saved.emailText && !isEmail(saved.emailText)) { setMsg(saveMsg, 'Enter a valid email address in the Contact email field.'); return; }
+    var url = document.getElementById('portfolioUrl').value.trim();
+    if (url && !safeHttp(url)) { setMsg(saveMsg, 'The portfolio URL must start with https:// or http://.'); return; }
+    var cv = {};
+    CV_IDS.forEach(function (id) { cv[id] = document.getElementById(id).value.trim(); });
+    var ok = write(KEYS.edits, saved) && write(KEYS.cv, cv);
+    if (url) { try { localStorage.setItem(KEYS.url, url); } catch (err) { ok = false; } } else { localStorage.removeItem(KEYS.url); }
+    if (!ok) { setMsg(saveMsg, 'Could not save in this browser. Check that browser storage is allowed.'); return; }
+    nodes.forEach(function (n) { setVal(n, saved[n.dataset.edit] || n.dataset.default); });
+    syncEmail();
+    setMsg(saveMsg, 'Saved in this browser.');
+  });
 
-// Profile picture changes are stored locally in this browser.
-const profileUpload = document.getElementById('profileUpload');
-if(profileUpload){
-  profileUpload.addEventListener('change',()=>{
-    const file=profileUpload.files && profileUpload.files[0];
-    if(!file)return;
-    if(!file.type.startsWith('image/')){alert('Please choose an image file.');profileUpload.value='';return;}
-    if(file.size>3*1024*1024){alert('Please choose an image smaller than 3 MB.');profileUpload.value='';return;}
-    const reader=new FileReader();
-    reader.onload=()=>{
-      try{
-        localStorage.setItem('kiranProfilePhotoV1',String(reader.result));
-        const pic=document.getElementById('profilePicture'); if(pic)pic.src=String(reader.result);
-        saveMessage.textContent='Profile picture updated in this browser. Click Save changes to save other edits.';
-      }catch(err){alert('This image is too large for browser storage. Please choose a smaller image.');}
+  document.getElementById('dashboardReset').addEventListener('click', function () {
+    if (!authed) { return; }
+    if (!window.confirm('Reset all saved edits, attachments on existing items, CV details, profile photo, and portfolio URL in this browser? Items added under "Add to your portfolio" are kept.')) { return; }
+    [KEYS.edits, KEYS.cv, KEYS.photo, KEYS.url, KEYS.attach].forEach(function (k) { localStorage.removeItem(k); });
+    window.location.reload();
+  });
+
+  /* ---- profile photo ---- */
+  document.getElementById('profileUpload').addEventListener('change', function (e) {
+    var input = e.target; var file = input.files && input.files[0];
+    if (!file || !authed) { return; }
+    if (!/^image\/(png|jpeg|webp)$/.test(file.type)) { setMsg(saveMsg, 'Please choose a JPG, PNG, or WebP image.'); input.value = ''; return; }
+    if (file.size > 3 * 1024 * 1024) { setMsg(saveMsg, 'Please choose an image smaller than 3 MB.'); input.value = ''; return; }
+    var reader = new FileReader();
+    reader.onload = function () {
+      try {
+        localStorage.setItem(KEYS.photo, String(reader.result));
+        applyEdits(); setMsg(saveMsg, 'Profile picture updated in this browser.');
+      } catch (err) { setMsg(saveMsg, 'That image is too large for browser storage. Please choose a smaller one.'); }
     };
+    reader.onerror = function () { setMsg(saveMsg, 'Could not read that image. Please try another.'); };
     reader.readAsDataURL(file);
   });
-}
 
-// Build and download a real PDF CV from current portfolio + admin CV fields.
-function downloadPortfolioCV(){
-  const cv=saveCVFields();
-  const getText=(selector)=>{const n=document.querySelector(selector);return n?n.innerText.trim():'';};
-  const name=getText('[data-edit="heroName"]')||'Kiran Zahid';
-  const role=getText('[data-edit="heroRole"]')||'AI & Robotics Developer';
-  const email=(getText('[data-edit="emailText"]')||'kiranzahid188@gmail.com').trim();
-  const portfolioUrl=(document.getElementById('portfolioUrl')?.value||localStorage.getItem('kiranPortfolioUrlV1')||'').trim();
-  const links=[['LinkedIn','https://www.linkedin.com/in/kiran-zahid-3a4a5a433'],['GitHub','https://github.com/Nexus-Kinematics'],['Fiverr','https://www.fiverr.com/s/Vrrma2z'],['Upwork','https://www.upwork.com/freelancers/~01c463310230087cd5?mp_source=share']];
-  if(portfolioUrl && /^https?:\/\//i.test(portfolioUrl)) links.push(['Portfolio Website',portfolioUrl]);
-  const projects=[...document.querySelectorAll('.project-card')].map(card=>({title:card.querySelector('h3')?.innerText.trim()||'Project',desc:card.querySelector('.project-info p')?.innerText.trim()||'',status:card.querySelector('.project-status')?.innerText.trim()||card.querySelector('.project-meta')?.innerText.trim()||''}));
-  readManagedEntries().forEach(item=>{if(item.type==='project')projects.push({title:item.title||'Project',desc:item.description||'',status:item.link?'Project link: '+item.link:''});});
-  if(!window.jspdf || !window.jspdf.jsPDF){
-    alert('The PDF generator could not load. Connect to the internet, refresh this page, and try Download CV again.');return;
-  }
-  const doc=new window.jspdf.jsPDF({unit:'pt',format:'a4'});
-  const margin=48, width=doc.internal.pageSize.getWidth()-margin*2, pageH=doc.internal.pageSize.getHeight();let y=54;
-  const addPageIfNeeded=(need=28)=>{if(y+need>pageH-48){doc.addPage();y=52;}};
-  const heading=(text)=>{addPageIfNeeded(34);y+=8;doc.setFont('helvetica','bold');doc.setFontSize(12);doc.setTextColor(91,53,165);doc.text(text.toUpperCase(),margin,y);y+=8;doc.setDrawColor(139,92,246);doc.line(margin,y,margin+width,y);y+=15;};
-  const paragraph=(text,opts={})=>{if(!text)return;doc.setFont('helvetica',opts.bold?'bold':'normal');doc.setFontSize(opts.size||9.5);doc.setTextColor(38,38,48);const lines=doc.splitTextToSize(String(text),width);addPageIfNeeded(lines.length*13+5);doc.text(lines,margin,y);y+=lines.length*13+5;};
-  const linesSection=(title,content)=>{if(!String(content||'').trim())return;heading(title);String(content).split(/\r?\n/).forEach(line=>paragraph(line.replace(/^•\s*/, '• ')));};
-  doc.setFont('helvetica','bold');doc.setFontSize(23);doc.setTextColor(24,20,35);doc.text(name,margin,y);y+=25;
-  doc.setFont('helvetica','normal');doc.setFontSize(13);doc.setTextColor(105,70,170);doc.text(role,margin,y);y+=18;
-  paragraph([cv.cvLocation||'Dina, District Jhelum, Punjab, Pakistan',cv.cvPhone||'03187977782',email].filter(Boolean).join('  |  '));
-  if(email){doc.setTextColor(91,53,165);doc.setFontSize(9);doc.textWithLink(email,margin,y,{url:'mailto:'+email});y+=14;}
-  let x=margin;
-  links.forEach(([label,url])=>{doc.setFontSize(9);doc.setTextColor(91,53,165);doc.textWithLink(label,x,y,{url});x+=doc.getTextWidth(label)+18;if(x>margin+width-70){x=margin;y+=14;addPageIfNeeded(20);}});y+=18;
-  heading('Professional Summary');paragraph(cv.cvSummary||getText('[data-edit="heroDescription"]'));
-  linesSection('Core Skills',cv.cvSkills);
-  heading('Projects');projects.forEach(p=>{addPageIfNeeded(45);doc.setFont('helvetica','bold');doc.setFontSize(10);doc.setTextColor(32,32,43);doc.text(doc.splitTextToSize(p.title,width),margin,y);y+=13;paragraph(p.desc);if(p.status)paragraph('Status: '+p.status,{size:8.5});});
-  linesSection('Professional Experience',cv.cvExperience);
-  linesSection('Education',cv.cvEducation);
-  linesSection('Certifications & Specialized Learning',cv.cvCertifications);
-  linesSection('Languages',cv.cvLanguages);
-  linesSection('Availability',cv.cvAvailability);
-  const extraEducation=readManagedEntries().filter(item=>item.type==='education');
-  const extraCertificates=readManagedEntries().filter(item=>item.type==='certificate');
-  if(extraEducation.length){heading('Additional Education');extraEducation.forEach(item=>{paragraph((item.title||'Education')+(item.description?' — '+item.description:''));if(item.link&&/^https?:\/\//i.test(item.link)){doc.setTextColor(91,53,165);doc.textWithLink('Related link',margin,y,{url:item.link});y+=13;}});}
-  if(extraCertificates.length){heading('Certificates');extraCertificates.forEach(item=>{paragraph((item.title||'Certificate')+(item.description?' — '+item.description:''));if(item.link&&/^https?:\/\//i.test(item.link)){doc.setTextColor(91,53,165);doc.textWithLink('Verify / view certificate',margin,y,{url:item.link});y+=13;}});}
-  // Add clickable project links for any managed project that has a URL.
-  const linkedProjects=readManagedEntries().filter(item=>item.type==='project'&&item.link&&/^https?:\/\//i.test(item.link));
-  if(linkedProjects.length){heading('Project Links');linkedProjects.forEach(item=>{addPageIfNeeded(18);doc.setFontSize(9);doc.setTextColor(91,53,165);doc.textWithLink(item.title||item.link,margin,y,{url:item.link});y+=14;});}
-  doc.save('Kiran_Zahid_CV.pdf');
-}
-const cvButton=document.getElementById('downloadCv');
-if(cvButton)cvButton.addEventListener('click',downloadPortfolioCV);
+  /* ---- add and remove items ---- */
+  document.getElementById('addEntryButton').addEventListener('click', function () {
+    if (!authed) { return; }
+    var type = document.getElementById('entryType').value;
+    var title = document.getElementById('entryTitle').value.trim();
+    var description = document.getElementById('entryDescription').value.trim();
+    var link = document.getElementById('entryLink').value.trim();
+    var fileInput = document.getElementById('entryFile');
+    var file = fileInput.files && fileInput.files[0];
+    if (!title && !description && !link && !file) { setMsg(saveMsg, 'Add a title, details, link, or file first.'); return; }
+    if (link && !safeHttp(link)) { setMsg(saveMsg, 'Use a complete link beginning with https:// or http://.'); return; }
+    if (file && file.size > 1800000) { setMsg(saveMsg, 'Please use a file smaller than 1.8 MB so it can be saved in this browser.'); return; }
+    function finish(dataUrl) {
+      var entries = read(KEYS.entries, []);
+      entries.push({ type: type, title: title, description: description, link: link, dataUrl: dataUrl || '', fileName: file ? file.name : '' });
+      if (!write(KEYS.entries, entries)) { setMsg(saveMsg, 'Could not save this item. Try a smaller attachment or remove older ones.'); return; }
+      ['entryTitle', 'entryDescription', 'entryLink'].forEach(function (id) { document.getElementById(id).value = ''; });
+      fileInput.value = '';
+      renderEntries(); setMsg(saveMsg, 'Item added and saved in this browser.');
+    }
+    if (file) {
+      var reader = new FileReader();
+      reader.onload = function () { finish(String(reader.result || '')); };
+      reader.onerror = function () { setMsg(saveMsg, 'Could not read that file. Please try another.'); };
+      reader.readAsDataURL(file);
+    } else { finish(''); }
+  });
 
-// Persist portfolio website URL separately for CV generation and dashboard reopening.
-const portfolioUrlInput=document.getElementById('portfolioUrl');
-if(portfolioUrlInput){
-  portfolioUrlInput.addEventListener('change',()=>localStorage.setItem('kiranPortfolioUrlV1',portfolioUrlInput.value.trim()));
-}
+  document.getElementById('managedEntries').addEventListener('click', function (e) {
+    var btn = e.target.closest('[data-remove]');
+    if (!btn || !authed) { return; }
+    var entries = read(KEYS.entries, []);
+    entries.splice(Number(btn.dataset.remove), 1);
+    write(KEYS.entries, entries); renderEntries(); setMsg(saveMsg, 'Item removed.');
+  });
 
-// Optional portfolio items: education, certificates, projects, or anything else.
-const ENTRY_STORAGE_KEY = 'kiranPortfolioManagedEntriesV1';
-function readManagedEntries(){ try { return JSON.parse(localStorage.getItem(ENTRY_STORAGE_KEY)||'[]'); } catch(e){ return []; } }
-function safeText(value){ return String(value||'').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch])); }
-function renderManagedEntries(){
-  const entries=readManagedEntries();
-  const publicWrap=document.getElementById('publicManagedEntries');
-  const section=document.getElementById('addedContent');
-  if(section) section.hidden=entries.length===0;
-  if(publicWrap) publicWrap.innerHTML=entries.map((item,index)=>{
-    let media='';
-    if(item.dataUrl && item.fileType && item.fileType.startsWith('image/')) media=`<img class="managed-media" src="${item.dataUrl}" alt="${safeText(item.title)}">`;
-    else if(item.dataUrl && item.fileType && item.fileType.startsWith('video/')) media=`<video class="managed-media" src="${item.dataUrl}" controls preload="metadata"></video>`;
-    else if(item.dataUrl) media=`<p><a class="managed-link" href="${item.dataUrl}" download="${safeText(item.fileName||item.title||'portfolio-file')}">Open / download attached document ↗</a></p>`;
-    const link=item.link?`<p><a class="managed-link" href="${safeText(item.link)}" target="_blank" rel="noopener noreferrer">Open related link ↗</a></p>`:'';
-    return `<article class="managed-card"><p class="eyebrow">${safeText(item.typeLabel||'ADDED ITEM')}</p><h3>${safeText(item.title||'Untitled item')}</h3><p>${safeText(item.description||'')}</p>${media}${link}</article>`;
-  }).join('');
-  const adminWrap=document.getElementById('managedEntries');
-  if(adminWrap) adminWrap.innerHTML=entries.map((item,index)=>`<div class="managed-admin-row"><div><strong>${safeText(item.title||'Untitled item')}</strong><small>${safeText(item.typeLabel||'Item')}${item.fileName?' · '+safeText(item.fileName):''}${item.link?' · link added':''}</small></div><button type="button" class="button button-secondary managed-remove" data-remove-entry="${index}">Remove</button></div>`).join('') || '<p class="dashboard-subtitle">No extra items yet. Add only what you want to show.</p>';
-}
-const addEntryButton=document.getElementById('addEntryButton');
-if(addEntryButton) addEntryButton.addEventListener('click',()=>{
-  if(!dashboardAuthenticated) return;
-  const type=document.getElementById('entryType').value;
-  const title=document.getElementById('entryTitle').value.trim();
-  const description=document.getElementById('entryDescription').value.trim();
-  const link=document.getElementById('entryLink').value.trim();
-  const fileInput=document.getElementById('entryFile');
-  const file=fileInput.files && fileInput.files[0];
-  if(!title && !description && !link && !file){ saveMessage.textContent='Add a title, details, link, or file first.'; return; }
-  if(link && !/^https?:\/\//i.test(link)){ saveMessage.textContent='Use a complete link beginning with https:// or http://.'; return; }
-  if(file && file.size>1800000){ saveMessage.textContent='Please use a file smaller than 1.8 MB so it can be saved in this browser.'; return; }
-  const finish=(dataUrl='')=>{
-    const labels={education:'EDUCATION',certificate:'CERTIFICATE',project:'PROJECT',extra:'MORE'};
-    const item={type,typeLabel:labels[type]||'MORE',title,description,link,dataUrl,fileType:file?file.type:'',fileName:file?file.name:''};
-    const entries=readManagedEntries(); entries.push(item);
-    try{ localStorage.setItem(ENTRY_STORAGE_KEY,JSON.stringify(entries)); }
-    catch(err){ saveMessage.textContent='Could not save this item. Try a smaller attachment or remove older attachments.'; return; }
-    document.getElementById('entryTitle').value=''; document.getElementById('entryDescription').value=''; document.getElementById('entryLink').value=''; fileInput.value='';
-    saveMessage.textContent='Item added and saved in this browser.'; renderManagedEntries();
-  };
-  if(file){ const reader=new FileReader(); reader.onload=()=>finish(String(reader.result||'')); reader.onerror=()=>{saveMessage.textContent='Could not read that file. Please try another.';}; reader.readAsDataURL(file); }
-  else finish('');
-});
-const managedEntries=document.getElementById('managedEntries');
-if(managedEntries) managedEntries.addEventListener('click',event=>{
-  const button=event.target.closest('[data-remove-entry]'); if(!button || !dashboardAuthenticated)return;
-  const entries=readManagedEntries(); entries.splice(Number(button.dataset.removeEntry),1); localStorage.setItem(ENTRY_STORAGE_KEY,JSON.stringify(entries)); renderManagedEntries(); saveMessage.textContent='Item removed.';
-});
-renderManagedEntries();
+  document.getElementById('attachButton').addEventListener('click', function () {
+    if (!authed) { return; }
+    var key = document.getElementById('attachTarget').value;
+    var input = document.getElementById('attachFile');
+    var caption = document.getElementById('attachCaption').value.trim();
+    var file = input.files && input.files[0];
+    if (!file) { setMsg(saveMsg, 'Choose a picture, video, or PDF first.'); return; }
+    if (!MEDIA_OK.test(file.type)) { setMsg(saveMsg, 'Please choose a picture (JPG, PNG, WebP, GIF), a video (MP4 or WebM), or a PDF.'); return; }
+    if (file.size > 1800000) { setMsg(saveMsg, 'Please use a file smaller than 1.8 MB so it can be saved in this browser.'); return; }
+    var reader = new FileReader();
+    reader.onload = function () {
+      var store = read(KEYS.attach, {});
+      (store[key] = store[key] || []).push({ dataUrl: String(reader.result || ''), fileName: file.name, caption: caption });
+      if (!write(KEYS.attach, store)) { setMsg(saveMsg, 'Browser storage is full. Remove an older attachment or use a smaller file.'); return; }
+      input.value = ''; document.getElementById('attachCaption').value = '';
+      renderAttachments(); renderAttachmentAdmin(); setMsg(saveMsg, 'File attached and saved in this browser.');
+    };
+    reader.onerror = function () { setMsg(saveMsg, 'Could not read that file. Please try another.'); };
+    reader.readAsDataURL(file);
+  });
+
+  document.getElementById('attachmentList').addEventListener('click', function (e) {
+    var btn = e.target.closest('[data-attach-key]');
+    if (!btn || !authed) { return; }
+    var store = read(KEYS.attach, {});
+    var list = store[btn.dataset.attachKey] || [];
+    list.splice(Number(btn.dataset.attachIndex), 1);
+    if (list.length) { store[btn.dataset.attachKey] = list; } else { delete store[btn.dataset.attachKey]; }
+    write(KEYS.attach, store); renderAttachments(); renderAttachmentAdmin(); setMsg(saveMsg, 'Attachment removed.');
+  });
+
+  applyEdits();
+  renderEntries();
+  renderAttachments();
+})();
