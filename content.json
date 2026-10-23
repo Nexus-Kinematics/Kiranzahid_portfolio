@@ -1,0 +1,280 @@
+{
+  "site": {
+    "title": "Kiran Zahid — AI Automation · Robotics · QA",
+    "description": "Kiran Zahid — AI automation, robotics learning, and software quality assurance portfolio.",
+    "theme": "navy-teal"
+  },
+  "profile": {
+    "name": "Kiran Zahid",
+    "initials": "KZ",
+    "headline": "AI Automation Developer · Robotics Learner · Software QA Tester",
+    "eyebrow": "Open to meaningful opportunities",
+    "intro": "I build practical AI-assisted automations, explore robotics, and test software workflows. I enjoy turning complex processes into clear, useful systems.",
+    "aboutLead": "I’m interested in building technology that makes everyday work more efficient, reliable, and easier to understand.",
+    "aboutParagraphs": [
+      "My focus spans AI-assisted workflow automation, robotics fundamentals, and software quality assurance. I explore tools such as n8n, Zapier, OpenAI integrations, Gmail, and Google Sheets, and bring a structured testing mindset to software workflows.",
+      "I’m pursuing the Modern Robotics Specialization associated with Northwestern University. My teaching experience has also strengthened my communication, organization, and time-management skills."
+    ],
+    "location": "Punjab, Pakistan",
+    "interests": "Automation · Robotics · QA",
+    "languages": "English · Urdu · French (basic)",
+    "portrait": "",
+    "portraitAlt": "Kiran Zahid portrait",
+    "availability": "Part-time, nights & weekends (confirm current availability)",
+    "email": "kiranzahid188@gmail.com",
+    "cv": "Kiran-Zahid-CV.pdf"
+  },
+  "links": [
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/kiran-zahid-3a4a5a433"
+    },
+    {
+      "label": "GitHub",
+      "url": "https://github.com/Nexus-Kinematics"
+    },
+    {
+      "label": "Fiverr",
+      "url": "https://www.fiverr.com/s/Vrrma2z"
+    },
+    {
+      "label": "Upwork",
+      "url": "https://www.upwork.com/freelancers/~01c463310230087cd5?mp_source=share"
+    }
+  ],
+  "skills": [
+    {
+      "title": "AI & Automation",
+      "description": "Designing workflows that reduce repetitive manual steps.",
+      "icon": "✳",
+      "tags": [
+        "n8n",
+        "Zapier",
+        "OpenAI / LLMs",
+        "Gmail",
+        "Google Sheets"
+      ]
+    },
+    {
+      "title": "Robotics",
+      "description": "Building foundations in robot motion, automation, and sensing.",
+      "icon": "⌘",
+      "tags": [
+        "Modern Robotics",
+        "Automation concepts",
+        "Sensors — learning",
+        "Embedded systems — learning"
+      ]
+    },
+    {
+      "title": "Software QA",
+      "description": "Checking expected behavior and documenting outcomes clearly.",
+      "icon": "✓",
+      "tags": [
+        "Manual testing",
+        "Test cases",
+        "Result comparison",
+        "Defect reporting",
+        "POS workflows"
+      ]
+    },
+    {
+      "title": "Professional skills",
+      "description": "Communication and organization developed through teaching and practical work.",
+      "icon": "↗",
+      "tags": [
+        "Communication",
+        "Organization",
+        "Time management",
+        "Teaching"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "AI Lead Qualification & CRM Automation",
+      "category": "Automation",
+      "status": "Project overview",
+      "description": "An AI-assisted workflow concept for cleaning incoming lead data, assigning Hot/Warm/Cold categories, recording results, and routing notifications based on priority.",
+      "tags": [
+        "n8n",
+        "OpenAI",
+        "Google Sheets",
+        "Gmail"
+      ],
+      "image": "",
+      "imageAlt": "Lead qualification workflow screenshot",
+      "video": "",
+      "pdf": "",
+      "link": "",
+      "notes": "Replace this illustrative diagram with your actual workflow screenshot when available."
+    },
+    {
+      "title": "AI Customer Support Email Agent",
+      "category": "Automation",
+      "status": "Project overview",
+      "description": "An AI-assisted email workflow concept for organizing inquiries, preparing responses, routing cases for human review, and logging outcomes.",
+      "tags": [
+        "n8n",
+        "OpenAI",
+        "Gmail",
+        "Google Sheets"
+      ],
+      "image": "",
+      "imageAlt": "Customer support workflow screenshot",
+      "video": "",
+      "pdf": "",
+      "link": "",
+      "notes": "Illustrative concept — replace with a real project screenshot when available."
+    },
+    {
+      "title": "AQSA POS System Testing",
+      "category": "Quality Assurance",
+      "status": "Details in progress",
+      "description": "Hands-on manual functional testing focused on executing test cases, comparing expected and actual results, identifying issues, and documenting outcomes.",
+      "tags": [
+        "Manual QA",
+        "Test cases",
+        "POS",
+        "Defect reporting"
+      ],
+      "image": "",
+      "imageAlt": "POS testing screenshot",
+      "video": "",
+      "pdf": "",
+      "link": "",
+      "notes": "No pass rate or completion claim is made without verified test records."
+    },
+    {
+      "title": "Fire Chaser Extinguisher Robot",
+      "category": "Robotics",
+      "status": "In progress",
+      "description": "A robotics project concept centered on fire detection and response automation. Technical details will be added as the project develops.",
+      "tags": [
+        "Robotics",
+        "Sensors",
+        "Embedded systems"
+      ],
+      "image": "",
+      "imageAlt": "Fire chaser robot project image",
+      "video": "",
+      "pdf": "",
+      "link": "",
+      "notes": ""
+    },
+    {
+      "title": "CKD Screening AI",
+      "category": "AI Prototype",
+      "status": "In progress",
+      "description": "An exploratory AI screening concept. It is for learning and demonstration only and is not a diagnostic medical tool.",
+      "tags": [
+        "AI",
+        "Prototype",
+        "Responsible AI"
+      ],
+      "image": "",
+      "imageAlt": "CKD screening project image",
+      "video": "",
+      "pdf": "",
+      "link": "",
+      "notes": "Not intended for medical diagnosis."
+    }
+  ],
+  "experience": [
+    {
+      "type": "INTERNSHIP",
+      "duration": "Date not specified",
+      "role": "Intern",
+      "organization": "AQSA IT Solutions",
+      "description": "Internship experience connected to practical IT work and software quality. Specific responsibilities and dates can be added when confirmed.",
+      "link": "",
+      "image": ""
+    },
+    {
+      "type": "TEACHING",
+      "duration": "Six months",
+      "role": "Teacher",
+      "organization": "The Educators",
+      "description": "Developed communication, organization, responsibility, and classroom-management skills while working directly with students.",
+      "link": "",
+      "image": ""
+    },
+    {
+      "type": "TEACHING",
+      "duration": "Dates to confirm",
+      "role": "Teacher",
+      "organization": "Science Valley",
+      "description": "Built practical workplace experience through teaching, communication, organization, time management, and day-to-day professional responsibilities.",
+      "link": "",
+      "image": ""
+    }
+  ],
+  "education": [
+    {
+      "type": "FORMAL EDUCATION",
+      "title": "Intermediate (ICS – Physics)",
+      "institution": "Pakistan Girls College Dina",
+      "status": "Completed · 2025",
+      "description": "",
+      "certificateImage": "",
+      "certificatePdf": "",
+      "link": ""
+    },
+    {
+      "type": "SPECIALIZATION",
+      "title": "Modern Robotics",
+      "institution": "Northwestern University-associated specialization coursework",
+      "status": "Currently pursuing, if still accurate",
+      "description": "",
+      "certificateImage": "",
+      "certificatePdf": "",
+      "link": ""
+    },
+    {
+      "type": "COURSE",
+      "title": "AI Mastery",
+      "institution": "AQSA IT Solutions",
+      "status": "Reported completed",
+      "description": "",
+      "certificateImage": "",
+      "certificatePdf": "",
+      "link": ""
+    },
+    {
+      "type": "COURSE",
+      "title": "Elements of AI",
+      "institution": "University of Helsinki",
+      "status": "Reported completed",
+      "description": "",
+      "certificateImage": "",
+      "certificatePdf": "",
+      "link": ""
+    },
+    {
+      "type": "COURSE",
+      "title": "AI Elements",
+      "institution": "Riphah University",
+      "status": "Reported completed",
+      "description": "",
+      "certificateImage": "",
+      "certificatePdf": "",
+      "link": ""
+    }
+  ],
+  "certificates": [],
+  "contact": {
+    "heading": "Have a project or opportunity in mind?",
+    "description": "I’m interested in opportunities related to AI automation, robotics, and software testing. Let’s connect.",
+    "emailLabel": "Email me",
+    "extraFields": [
+      {
+        "label": "Location",
+        "value": "Punjab, Pakistan"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Building, learning, testing — one step at a time.",
+    "copyright": "Kiran Zahid"
+  }
+}
