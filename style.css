@@ -462,11 +462,11 @@ a:hover { color: var(--accent-hover); text-decoration-thickness: 2px; }
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  grid-template-columns: minmax(0, 1fr);
   gap: 1.75rem;
   margin-top: 1.75rem;
 }
-.project-grid .project { display: flex; flex-direction: column; align-items: flex-start; margin-top: 0; padding: clamp(1.25rem, 3vw, 1.75rem); }
+.project-grid .project { display: flex; flex-direction: column; align-items: flex-start; width: 100%; margin-top: 0; padding: clamp(1.25rem, 3vw, 1.75rem); }
 .project-grid .tags { margin-top: auto; padding-top: 1.25rem; }
 .project-grid h3 { margin-bottom: 0.75rem; }
 .project-grid p { font-size: 1rem; line-height: 1.6; }
