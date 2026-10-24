@@ -17,3 +17,8 @@ Upload the *contents* of this folder to the repository root, preserving the `ass
 
 ## Test locally
 Open through a local static server (not `file://`) so `fetch('content.json')` works. For example in Cursor terminal: `python -m http.server 8000`, then visit `http://localhost:8000`.
+
+
+## AQSA POS testing evidence
+- `assets/AQSA-POS-Testing-Evidence.pdf`: two-page portfolio evidence PDF (original sign-off page plus test execution chart).
+- The AQSA POS project card in `index.html` links to view and download this PDF.
