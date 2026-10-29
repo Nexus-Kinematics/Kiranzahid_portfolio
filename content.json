@@ -130,20 +130,20 @@
     {
       "title": "AQSA POS System Testing",
       "category": "Quality Assurance",
-      "status": "Details in progress",
-      "description": "Hands-on manual functional testing focused on executing test cases, comparing expected and actual results, identifying issues, and documenting outcomes.",
+      "status": "Testing evidence available",
+      "description": "Manual functional testing of a point-of-sale (POS) application across sales, inventory, customer records, reports, integrations, and backup workflows.",
       "tags": [
-        "Manual QA",
-        "Test cases",
+        "Manual testing",
         "POS",
-        "Defect reporting"
+        "Quality assurance",
+        "Test reporting"
       ],
       "image": "",
       "imageAlt": "POS testing project image",
       "video": "",
-      "pdf": "",
+      "pdf": "assets/AQSA-POS-Testing-Evidence.pdf",
       "link": "",
-      "notes": "No pass rate or completion claim is made without verified test records."
+      "notes": "The attached evidence includes the original report sign-off page and a chart based on the test totals recorded in the checklist."
     },
     {
       "title": "Fire Chaser Extinguisher Robot",

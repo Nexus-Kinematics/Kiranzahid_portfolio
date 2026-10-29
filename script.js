@@ -45,7 +45,17 @@
       if (p.notes) main.appendChild(node('p','project__note',p.notes));
       var media=node('div','project__media-links');
       if (p.image && imgUrl) media.appendChild(link('Open full-size image',imgUrl,'project__media-link'));
-      var pdf=mediaUrl(p.pdf); if(pdf) media.appendChild(link('Open project PDF',pdf,'project__media-link'));
+      var pdf=mediaUrl(p.pdf);
+      /* Keep the AQSA evidence reachable even if an older content.json omits its PDF field. */
+      if (!pdf && /AQSA POS System Testing/i.test(p.title || '')) pdf='assets/AQSA-POS-Testing-Evidence.pdf';
+      if(pdf) {
+        var actions=node('p','project__actions');
+        var viewPdf=node('a','btn btn--primary','View testing evidence (PDF)');
+        viewPdf.href=pdf; viewPdf.target='_blank'; viewPdf.rel='noopener noreferrer';
+        var downloadPdf=node('a','btn btn--secondary','Download PDF');
+        downloadPdf.href=pdf; downloadPdf.setAttribute('download','AQSA-POS-Testing-Evidence.pdf');
+        actions.appendChild(viewPdf); actions.appendChild(downloadPdf); main.appendChild(actions);
+      }
       var vid=mediaUrl(p.video); if(vid) { if(/^data:video|\.(mp4|webm|ogg)(\?|$)/i.test(vid)) { var video=node('video','project__video'); video.controls=true; video.preload='metadata'; video.src=vid; media.appendChild(video); } else media.appendChild(link('Watch project video',vid,'project__media-link')); }
       var projectLink=mediaUrl(p.link); if(projectLink) media.appendChild(link('Project link',projectLink,'project__media-link'));
       if(media.childNodes.length) main.appendChild(media); body.appendChild(main); article.appendChild(body);
@@ -84,5 +94,5 @@
     renderLinks();renderSkills();renderProjects();renderExperience();renderEducation();renderCertificates();renderCustom();
   }
   var content={};
-  fetch('content.json?v='+encodeURIComponent(document.lastModified||Date.now()),{cache:'no-cache'}).then(function(r){if(!r.ok)throw new Error('content unavailable');return r.json();}).then(applyContent).catch(function(err){console.warn('Portfolio content could not load; showing built-in HTML fallback.',err);});
+  fetch('content.json?v=20261027-pdf-buttons-fix',{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('content unavailable');return r.json();}).then(applyContent).catch(function(err){console.warn('Portfolio content could not load; showing built-in HTML fallback.',err);});
 })();
