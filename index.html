@@ -1,61 +1,397 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b1220"><title>Portfolio Content Studio — Kiran Zahid</title><link rel="stylesheet" href="../style.css"><style>
-:root{--admin-bg:#f4f7fb}.admin-body{background:var(--admin-bg);color:#172033}.admin-wrap{width:min(1180px,calc(100% - 28px));margin:24px auto 60px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:18px 20px;background:#0b1220;color:#fff;border-radius:16px}.topbar .brand{color:#fff}.topbar p{font-size:12px;color:#cbd5e1;margin:4px 0 0}.warning{margin:16px 0;padding:14px 16px;background:#fff7ed;border:1px solid #fed7aa;border-radius:12px;color:#9a3412;font-size:12px;line-height:1.65}.success{background:#ecfdf5;border:1px solid #a7f3d0;color:#065f46}.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.save-dock{position:sticky;bottom:10px;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:18px 0;padding:12px;background:#0b1220;border:1px solid #263449;border-radius:14px;box-shadow:0 12px 35px #0f172a24}.save-dock p{margin:0;color:#e2e8f0;font-size:12px}.save-dock .btnx{font-size:13px;padding:12px 16px}.save-dock .save-actions{display:flex;gap:8px;flex-wrap:wrap}@media(max-width:520px){.save-dock{position:static}.save-dock .save-actions{width:100%}.save-dock .save-actions button{flex:1}}.btnx{border:0;border-radius:9px;padding:10px 13px;background:#0b1220;color:#fff;font:600 12px Inter, sans-serif;cursor:pointer}.btnx.alt{background:#e2e8f0;color:#172033}.btnx.teal{background:#0f9488}.btnx.danger{background:#fee2e2;color:#991b1b}.btnx:focus-visible{outline:3px solid #14b8a6;outline-offset:2px}.status{font-size:12px;min-height:22px;color:#0f766e}.layout{display:grid;grid-template-columns:245px minmax(0,1fr);gap:16px;align-items:start}.sidebar{position:sticky;top:12px;background:white;border:1px solid #e2e8f0;border-radius:14px;padding:12px}.sidebar h3{font-size:12px;margin:6px 8px 10px}.side-link{display:block;width:100%;text-align:left;border:0;background:transparent;border-radius:8px;padding:10px;font:600 12px Inter,sans-serif;color:#475569;cursor:pointer}.side-link:hover,.side-link.active{background:#ccfbf1;color:#115e59}.editor{min-width:0}.group{background:white;border:1px solid #e2e8f0;border-radius:14px;margin-bottom:14px;overflow:hidden}.group-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:16px 18px;background:#fbfdff;border-bottom:1px solid #edf2f7}.group-head h2{font-size:17px;letter-spacing:-.03em;margin:0;overflow-wrap:anywhere}.group-body{padding:16px 18px}.field{border:1px solid #e2e8f0;border-radius:10px;padding:12px;margin:9px 0;min-width:0}.field>label,.field-label{display:block;font-size:11px;font-weight:750;color:#334155;margin-bottom:7px;overflow-wrap:anywhere}.field input[type=text],.field input[type=url],.field input[type=email],.field input[type=number],.field textarea,.field select{display:block;width:100%;border:1px solid #cbd5e1;border-radius:8px;padding:10px;font:13px Inter,sans-serif;color:#172033;background:#fff}.field textarea{min-height:82px;resize:vertical}.field input:focus,.field textarea:focus{outline:2px solid #99f6e4;border-color:#0f9488}.hint{font-size:10px;color:#64748b;margin-top:6px;line-height:1.5}.object-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px}.array-item{border:1px solid #dbe4ef;border-radius:11px;margin:12px 0;overflow:hidden}.array-item-head{display:flex;align-items:center;justify-content:space-between;gap:8px;background:#f8fafc;padding:10px 12px}.array-item-head strong{font-size:12px;overflow-wrap:anywhere}.array-item-body{padding:9px}.array-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}.media-preview{max-width:100%;max-height:180px;display:block;margin-top:8px;border-radius:8px}.field-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}.add-field{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.add-field input{flex:1;min-width:140px;padding:9px;border:1px solid #cbd5e1;border-radius:8px}.login-card{max-width:440px;margin:65px auto;background:white;border:1px solid #e2e8f0;border-radius:18px;padding:26px;box-shadow:0 18px 55px #0f172a0c}.login-card h1{font-size:24px;letter-spacing:-.05em}.login-card label{display:block;font-size:12px;font-weight:700;margin:14px 0}.login-card input{display:block;width:100%;margin-top:6px;padding:11px;border:1px solid #cbd5e1;border-radius:8px}.hidden{display:none!important}.small{font-size:10px;color:#64748b}.count{font-size:10px;color:#64748b;background:#e2e8f0;border-radius:99px;padding:4px 7px}.mobile-select{display:none;width:100%;padding:10px;border-radius:8px;margin-bottom:12px}@media(max-width:780px){.layout{grid-template-columns:1fr}.sidebar{position:static}.side-links{display:none}.mobile-select{display:block}.object-fields{grid-template-columns:1fr}.group-body{padding:12px}.admin-wrap{width:calc(100% - 18px);margin-top:9px}.topbar{border-radius:12px;padding:14px}}
-</style></head><body class="admin-body"><main class="admin-wrap"><header class="topbar"><div><a class="brand" href="../index.html"><span class="mark">KZ</span>Portfolio Content Studio<span class="dot">.</span></a><p>Edit your portfolio and publish updates directly to GitHub.</p></div><a class="btnx alt" href="../index.html">View portfolio ↗</a></header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kiran Zahid | AI &amp; Robotics Developer</title>
+  <meta name="description" content="Portfolio of Kiran Zahid, an AI and robotics developer who builds AI-assisted automation workflows and has hands-on software testing experience.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f3f6f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0e1a21" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://nexus-kinematics.github.io/Kiranzahid_portfolio/">
 
-<section id="loginView" class="login-card"><h1>Sign in to edit</h1><p class="small">Frontend demo access only — not a secure account system.</p><form id="loginForm"><label>Username<input id="username" autocomplete="username" required></label><label>Password<input id="password" type="password" autocomplete="current-password" required></label><button class="btnx teal" type="submit">Open content editor</button><p class="status" id="loginStatus" aria-live="polite"></p></form><p class="small">Demo username: <code>kiranadmin</code><br>Demo password: <code>KZ-Portfolio!2026-ChangeMe</code></p></section>
-<section id="studio" class="hidden"><div class="toolbar"><button class="btnx teal" id="saveDraft">Save &amp; Publish</button><button class="btnx alt" id="importJson">Import content.json</button><input id="importFile" type="file" accept="application/json,.json" class="hidden"><button class="btnx alt" id="reloadRemote">Reload published content</button><button class="btnx alt" id="previewSite">Open website</button><button class="btnx alt" id="logout">Log out</button></div><div id="status" class="status" role="status" aria-live="polite"></div><div class="layout"><aside class="sidebar"><h3>EDIT CONTENT AREAS</h3><select id="sectionSelect" class="mobile-select" aria-label="Select content area"></select><div id="sideLinks" class="side-links"></div><p class="small">Use “Add item” to add projects, skills, jobs, education or certificates. Use “Add field” to create additional custom fields.</p></aside><div class="editor"><div class="group"><div class="group-head"><h2 id="activeTitle">Portfolio content</h2><span class="count" id="itemCount">Editable</span></div><div class="group-body" id="editorArea"></div></div></div></div><div class="save-dock"><p><strong>Save &amp; Publish</strong> sends your latest changes to GitHub.</p><div class="save-actions"><button class="btnx teal" id="saveDraftBottom" type="button">Save &amp; Publish</button></div></div></section></main>
-<script>
-const LOGIN_USER='kiranadmin',LOGIN_PASS='KZ-Portfolio!2026-ChangeMe',DRAFT_KEY='kz-portfolio-content-v2';
-// Direct GitHub publishing. Token is requested at runtime and kept in sessionStorage only.
-const GH_OWNER='Nexus-Kinematics';
-const GH_REPO='Kiranzahid_portfolio';
-const GH_BRANCH='main';
-let publishKey=sessionStorage.getItem('kz_github_token')||'';
-const $=s=>document.querySelector(s);let data=null,active='profile',dirty=false;
-const sections=[['site','Site settings'],['profile','Profile & about'],['links','Social & external links'],['skills','Skills'],['projects','Projects'],['experience','Experience'],['education','Education & courses'],['certificates','Certificates'],['contact','Contact'],['extraFields','Additional sections'],['footer','Footer']];
-const clone=x=>JSON.parse(JSON.stringify(x));const pretty=k=>String(k).replace(/([a-z])([A-Z])/g,'$1 $2').replace(/[_-]/g,' ').replace(/^./,c=>c.toUpperCase());
-function setStatus(msg,bad=false){$('#status').textContent=msg;$('#status').style.color=bad?'#b91c1c':'#0f766e'}
-$('#loginForm').addEventListener('submit',async e=>{e.preventDefault();if($('#username').value.trim()!==LOGIN_USER||$('#password').value!==LOGIN_PASS){$('#loginStatus').textContent='Incorrect username or password.';return}$('#loginView').classList.add('hidden');$('#studio').classList.remove('hidden');await loadInitial();});
-async function loadInitial(){try{const r=await fetch('../content.json',{cache:'no-store'});if(!r.ok)throw Error('fetch');data=await r.json();setStatus('Published content loaded. Edit fields, then click Save & Publish.')}catch(e){try{const raw=localStorage.getItem(DRAFT_KEY);if(raw){data=JSON.parse(raw);setStatus('Loaded saved browser draft.')}else{setStatus('Could not load content.json. Use Import content.json to load a copy.',true);return}}catch(_){setStatus('Could not load content. Import a valid content.json file.',true);return}}buildNav();renderActive();}
-function buildNav(){const nav=$('#sideLinks'),sel=$('#sectionSelect');nav.replaceChildren();sel.replaceChildren();sections.forEach(([key,label])=>{const b=document.createElement('button');b.className='side-link'+(active===key?' active':'');b.textContent=label;b.onclick=()=>{active=key;renderActive();buildNav()};nav.append(b);const o=document.createElement('option');o.value=key;o.textContent=label;sel.append(o)});sel.value=active;sel.onchange=()=>{active=sel.value;renderActive();buildNav()}}
-function valueType(v){if(v===null)return 'string';if(Array.isArray(v))return 'array';if(typeof v==='object')return 'object';return typeof v}
-function makeField(key,val,path){const wrap=document.createElement('div');wrap.className='field';const label=document.createElement('label');label.className='field-label';label.textContent=pretty(key);wrap.append(label);const type=valueType(val);if(type==='object'){const inner=document.createElement('div');inner.className='object-fields';Object.entries(val).forEach(([k,v])=>inner.append(makeField(k,v,[...path,k])));wrap.append(inner);const add=document.createElement('div');add.className='add-field';const input=document.createElement('input');input.placeholder='New field name';const btn=document.createElement('button');btn.className='btnx alt';btn.type='button';btn.textContent='Add field';btn.onclick=()=>{const k=input.value.trim();if(!k)return;if(Object.hasOwn(val,k)){setStatus('That field already exists.',true);return}val[k]='';dirty=true;renderActive()};add.append(input,btn);wrap.append(add);return wrap}
-if(type==='array'){const list=document.createElement('div');val.forEach((item,i)=>{const card=document.createElement('div');card.className='array-item';const head=document.createElement('div');head.className='array-item-head';const strong=document.createElement('strong');strong.textContent=`${pretty(key)} item ${i+1}${item&&typeof item==='object'&&!Array.isArray(item)?' — '+(item.title||item.name||item.role||item.label||item.organization||''):''}`;const del=document.createElement('button');del.className='btnx danger';del.type='button';del.textContent='Remove';del.onclick=()=>{if(confirm('Remove this item?')){val.splice(i,1);dirty=true;renderActive()}};head.append(strong,del);const body=document.createElement('div');body.className='array-item-body';body.append(makeField(String(i+1),item,[...path,i]));card.append(head,body);list.append(card)});const actions=document.createElement('div');actions.className='array-actions';const add=document.createElement('button');add.className='btnx teal';add.type='button';add.textContent='＋ Add item';add.onclick=()=>{let template;if(val.length)template=blankLike(val[0]);else template=key==='tags'?'New tag':key==='aboutParagraphs'?'New paragraph':key==='extraFields'?{label:'New field',value:''}:key==='certificates'?{title:'New certificate',issuer:'',date:'',description:'',image:'',pdf:'',link:''}:key==='links'?{label:'New link',url:'https://'}:key==='skills'?{title:'New skill group',description:'',icon:'✳',tags:[]}:key==='projects'?{title:'New project',category:'Project',status:'In progress',description:'',tags:[],image:'',imageAlt:'Project image',video:'',pdf:'',link:'',notes:''}:key==='experience'?{type:'EXPERIENCE',duration:'',role:'',organization:'',description:'',link:'',image:''}:key==='education'?{type:'COURSE',title:'New course',institution:'',status:'In progress',description:'',certificateImage:'',certificatePdf:'',link:''}:'';val.push(template);dirty=true;renderActive()};actions.append(add);wrap.append(list,actions);return wrap}
-const input=(type==='boolean')?document.createElement('input'):((/description|intro|paragraph|notes|tagline|aboutLead/i.test(key)||String(val||'').length>110)?document.createElement('textarea'):document.createElement('input'));
-if(type==='boolean'){input.type='checkbox';input.checked=!!val;input.onchange=()=>{setAt(path,input.checked);dirty=true}}else if(type==='number'){input.type='number';input.value=val;input.onchange=()=>{setAt(path,Number(input.value));dirty=true}}else{input.value=val??'';input.type='text';input.autocomplete='off';if(input.tagName==='TEXTAREA')input.rows=3;input.oninput=()=>{setAt(path,input.value);dirty=true;const preview=wrap.querySelector('.media-preview');if(preview&&/^data:image|^https?:.*\.(png|jpe?g|gif|webp|svg)(\?.*)?$/i.test(input.value)){preview.src=input.value}else if(preview){preview.remove()}}}
-if(/^(image|portrait|certificateImage|imageAlt)$/i.test(key)||/image|portrait|photo|certificateimage/i.test(key)){input.placeholder='Paste an image URL, or use Upload image below';}else if(/^(pdf|cv|certificatePdf|video|link|url)$/i.test(key)||/pdf|video|url|link/i.test(key)){input.placeholder='Paste a public URL or relative file path';}
-wrap.append(input);
-if(/image|portrait|certificateimage/i.test(key)){const file=document.createElement('input');file.type='file';file.accept='image/*';file.style.marginTop='9px';file.setAttribute('aria-label','Upload image');file.onchange=()=>{const f=file.files[0];if(!f)return;if(f.size>1.5*1024*1024&&!confirm('This image is larger than 1.5 MB and will make content.json large. Continue?')){file.value='';return}const reader=new FileReader();reader.onload=()=>{setAt(path,reader.result);dirty=true;renderActive();setStatus('Image added. Click Save & Publish to send it to GitHub.')};reader.readAsDataURL(f)};const upLabel=document.createElement('div');upLabel.className='hint';upLabel.textContent='Or upload an image (embedded in content.json; keep it small).';wrap.append(file,upLabel);if(typeof val==='string'&&val.startsWith('data:image')){const img=document.createElement('img');img.className='media-preview';img.src=val;img.alt='Current image preview';wrap.append(img)}}
-if(/pdf|cv/i.test(key)){const file=document.createElement('input');file.type='file';file.accept='application/pdf';file.style.marginTop='9px';file.onchange=()=>{const f=file.files[0];if(!f)return;if(f.size>4*1024*1024&&!confirm('This PDF is larger than 4 MB and will make content.json large. Continue?')){file.value='';return}const reader=new FileReader();reader.onload=()=>{setAt(path,reader.result);dirty=true;renderActive();setStatus('PDF added. Click Save & Publish to send it to GitHub.')};reader.readAsDataURL(f)};const hint=document.createElement('div');hint.className='hint';hint.textContent='Optional: upload a small PDF, or paste a relative path/URL above.';wrap.append(file,hint)}
-if(/video/i.test(key)){const file=document.createElement('input');file.type='file';file.accept='video/mp4,video/webm,video/ogg';file.style.marginTop='9px';file.onchange=()=>{const f=file.files[0];if(!f)return;if(f.size>8*1024*1024&&!confirm('This video is larger than 8 MB and will make content.json very large. Continue?')){file.value='';return}const reader=new FileReader();reader.onload=()=>{setAt(path,reader.result);dirty=true;renderActive();setStatus('Video added. Click Save & Publish to send it to GitHub. For large videos, use a hosted video URL instead.')};reader.readAsDataURL(f)};const hint=document.createElement('div');hint.className='hint';hint.textContent='Paste a public video URL, or upload a small MP4/WebM/Ogg video (up to 8 MB recommended). For large videos, use a hosted URL.';wrap.append(file,hint)}
-if(path.length>1){const del=document.createElement('button');del.type='button';del.className='btnx alt';del.style.marginTop='8px';del.textContent='Remove this field';del.onclick=()=>{if(confirm('Remove field “'+pretty(key)+'”?')){deleteAt(path);dirty=true;renderActive()}};wrap.append(del)}
-return wrap}
-function blankLike(v){if(Array.isArray(v))return [];if(v&&typeof v==='object')return Object.fromEntries(Object.entries(v).map(([k,x])=>[k,blankLike(x)]));if(typeof v==='number')return 0;if(typeof v==='boolean')return false;return ''}
-function getAt(path){return path.reduce((o,k)=>o[k],data)}function setAt(path,v){let o=data;for(let i=0;i<path.length-1;i++)o=o[path[i]];o[path[path.length-1]]=v}function deleteAt(path){let o=data;for(let i=0;i<path.length-1;i++)o=o[path[i]];if(Array.isArray(o))o.splice(path[path.length-1],1);else delete o[path[path.length-1]]}
-function renderActive(){if(!data)return;const entry=sections.find(x=>x[0]===active);$('#activeTitle').textContent=entry?entry[1]:active;$('#itemCount').textContent=Array.isArray(data[active])?`${data[active].length} items`:'Editable fields';const area=$('#editorArea');area.replaceChildren();const val=data[active];area.append(makeField(active,val,[active]));dirty=false}
-function saveLocalDraft(){try{localStorage.setItem(DRAFT_KEY,JSON.stringify(data));return true}catch(e){return false}}
-async function publishChanges(){
- if(!data){setStatus('Portfolio content is not loaded.',true);return}
- if(!publishKey){publishKey=prompt('Enter a fine-grained GitHub token with Contents: Read and write access to Nexus-Kinematics/Kiranzahid_portfolio. The token is kept only for this browser session:');if(!publishKey)return;sessionStorage.setItem('kz_github_token',publishKey)}
- if(!saveLocalDraft()){setStatus('Could not save a local backup; try reducing uploaded media size.',true);return}
- const buttons=[$('#saveDraft'),$('#saveDraftBottom')].filter(Boolean);buttons.forEach(b=>{b.disabled=true;b.textContent='Publishing…'});setStatus('Publishing changes directly to GitHub…');
- try{
-   const api=`https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/content.json`;
-   const headers={'Accept':'application/vnd.github+json','Authorization':`Bearer ${publishKey}`,'X-GitHub-Api-Version':'2022-11-28'};
-   const get=await fetch(`${api}?ref=${encodeURIComponent(GH_BRANCH)}`,{headers,cache:'no-store'});
-   if(!get.ok){let msg=`GitHub read failed (HTTP ${get.status}). Check token permissions and repository/branch.`;if(get.status===401||get.status===403){publishKey='';sessionStorage.removeItem('kz_github_token')}throw Error(msg)}
-   const current=await get.json();
-   const json=JSON.stringify(data,null,2);
-   const bytes=new TextEncoder().encode(json);let binary='';for(let i=0;i<bytes.length;i+=0x8000)binary+=String.fromCharCode(...bytes.subarray(i,i+0x8000));const encoded=btoa(binary);
-   const put=await fetch(api,{method:'PUT',headers:{...headers,'Content-Type':'application/json'},body:JSON.stringify({message:'Update portfolio content via admin panel',content:encoded,sha:current.sha,branch:GH_BRANCH})});
-   const result=await put.json().catch(()=>({}));
-   if(!put.ok){if(put.status===401||put.status===403){publishKey='';sessionStorage.removeItem('kz_github_token')}throw Error(result.message||`GitHub commit failed (HTTP ${put.status})`)}
-   dirty=false;setStatus('Published to GitHub successfully. GitHub Pages may take a few minutes to deploy.');
- }catch(err){setStatus('Publishing failed: '+err.message+'. Your browser draft remains saved; no live update is confirmed.',true)}
- finally{buttons.forEach(b=>{b.disabled=false;b.textContent='Save & Publish'})}
-}
-$('#saveDraft').onclick=publishChanges;$('#saveDraftBottom').onclick=publishChanges;
-$('#importJson').onclick=()=>$('#importFile').click();$('#importFile').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{const parsed=JSON.parse(await f.text());if(!parsed.profile||!parsed.site)throw Error('This does not look like the portfolio content.json file.');data=parsed;active='profile';buildNav();renderActive();setStatus('Imported JSON. Review it, then export when ready.')}catch(err){setStatus('Import failed: '+err.message,true)}e.target.value=''};
-$('#reloadRemote').onclick=async()=>{if(dirty&&!confirm('Reloading replaces unsaved edits. Continue?'))return;try{const r=await fetch('../content.json?reload='+Date.now(),{cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status);data=await r.json();buildNav();renderActive();setStatus('Reloaded currently published content.')}catch(e){setStatus('Could not reload published content. Use Import instead.',true)}};
-$('#previewSite').onclick=()=>window.open('../index.html','_blank','noopener');$('#logout').onclick=()=>{if(dirty&&!confirm('You have unsaved changes. Log out anyway?'))return;$('#studio').classList.add('hidden');$('#loginView').classList.remove('hidden');$('#loginForm').reset()};
-</script></body></html>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Kiran Zahid">
+  <meta property="og:title" content="Kiran Zahid | AI &amp; Robotics Developer">
+  <meta property="og:description" content="AI automation workflows, robotics studies, and software testing projects by Kiran Zahid.">
+  <meta property="og:url" content="https://nexus-kinematics.github.io/Kiranzahid_portfolio/">
+  <meta property="og:image" content="https://nexus-kinematics.github.io/Kiranzahid_portfolio/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Kiran Zahid, AI and Robotics Developer">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preload" href="fonts/bricolage-grotesque-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="brand" href="#top">Kiran Zahid</a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="siteNav">Menu</button>
+      <nav class="nav" id="siteNav" aria-label="Main">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#about">About</a></li>
+          <li><a class="nav__link" href="#skills">Skills</a></li>
+          <li><a class="nav__link" href="#projects">Projects</a></li>
+          <li><a class="nav__link" href="#experience">Experience</a></li>
+          <li><a class="nav__link" href="#education">Education</a></li>
+          <li><a class="nav__link nav__link--button" href="admin/">Edit portfolio</a></li>
+          <li><a class="nav__link nav__link--cta" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="wrap hero__grid">
+        <div class="hero__text">
+          <h1 id="hero-title">Kiran Zahid</h1>
+          <p class="hero__role" data-edit="heroRole" data-label="Professional title" data-group="Profile and about">AI &amp; Robotics Developer</p>
+          <p class="hero__intro" data-edit="heroIntro" data-label="Hero introduction" data-group="Profile and about">I build AI-assisted automation workflows, study robotics, and have hands-on experience testing point-of-sale software.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#projects">View projects</a>
+            <a class="btn btn--secondary" id="heroCvLink" href="Kiran-Zahid-CV.pdf" download>Download CV (PDF)</a>
+          </div>
+          <ul class="link-list" aria-label="Profiles">
+            <li><a href="https://www.linkedin.com/in/kiran-zahid-3a4a5a433" target="_blank" rel="noopener noreferrer">LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+            <li><a href="https://github.com/Nexus-Kinematics" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+            <li><a href="https://www.fiverr.com/s/Vrrma2z" target="_blank" rel="noopener noreferrer">Fiverr<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+            <li><a href="https://www.upwork.com/freelancers/~01c463310230087cd5?mp_source=share" target="_blank" rel="noopener noreferrer">Upwork<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+          </ul>
+        </div>
+        <figure class="portrait">
+          <img
+            src="assets/kiran-profile.jpg"
+            srcset="assets/kiran-profile-480.jpg 480w, assets/kiran-profile.jpg 716w"
+            sizes="(max-width: 760px) 80vw, 380px"
+            width="716" height="896"
+            fetchpriority="high"
+            alt="Kiran Zahid seated at a desk in a navy blazer and black hijab, holding a folder.">
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="wrap section__grid">
+        <h2 id="about-title">About</h2>
+        <div class="prose">
+          <p class="lead" data-edit="aboutLead" data-label="About headline" data-group="Profile and about">I build practical AI automations and I am studying robotics.</p>
+          <p data-edit="aboutText1" data-label="About paragraph 1" data-group="Profile and about">My work centers on workflow automation. I connect tools such as Gmail, Google Sheets, and OpenAI models so that routine tasks, like qualifying sales leads and answering customer emails, need less manual effort.</p>
+          <p data-edit="aboutText2" data-label="About paragraph 2" data-group="Profile and about">I am currently pursuing the Modern Robotics Specialization from Northwestern University. I also have hands-on software testing experience from the AQSA POS System project, and teaching experience that has strengthened my communication, organization, and time management.</p>
+          <p data-edit="aboutText3" data-label="About paragraph 3" data-group="Profile and about">I am based in Punjab, Pakistan, and I speak English, Urdu, and some French.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills" aria-labelledby="skills-title">
+      <div class="wrap section__grid">
+        <h2 id="skills-title">Skills</h2>
+        <div>
+          <div class="skills">
+            <div class="skills__group">
+              <h3>Automation and AI</h3>
+              <ul>
+                <li>AI automation</li>
+                <li>Workflow automation with n8n and Zapier</li>
+                <li>AI tools and large language models (LLMs)</li>
+                <li>Gmail, Google Sheets, and OpenAI integrations</li>
+              </ul>
+            </div>
+            <div class="skills__group">
+              <h3>Robotics</h3>
+              <ul>
+                <li>Robotics and automation fundamentals</li>
+                <li>Sensors and embedded systems (project in progress)</li>
+              </ul>
+              <p class="skills__note">Currently studying the Modern Robotics Specialization.</p>
+            </div>
+            <div class="skills__group">
+              <h3>Software testing</h3>
+              <ul>
+                <li>Manual functional testing</li>
+                <li>Test-case execution</li>
+                <li>Comparing expected and actual results</li>
+                <li>Documenting test outcomes</li>
+              </ul>
+            </div>
+            <div class="skills__group">
+              <h3>Professional and languages</h3>
+              <ul>
+                <li>Communication and organization</li>
+                <li>Time management</li>
+                <li>English (fluent), Urdu (native), French (basic)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="wrap">
+        <h2 id="projects-title">Projects</h2>
+        <p class="section-intro">Two automation workflows are documented with screenshots below. Projects that are still in progress are labeled, and their details will be added as they are ready to share.</p>
+
+        <article class="project" aria-labelledby="p-lead">
+          <div class="project__shot">
+            <img
+              src="assets/lead-qualification-workflow-1200.webp"
+              srcset="assets/lead-qualification-workflow-1200.webp 1200w, assets/lead-qualification-workflow.webp 1920w"
+              sizes="(max-width: 1120px) 100vw, 1120px"
+              width="1920" height="800" loading="lazy"
+              alt="Workflow editor showing an AI lead qualification automation: a web form feeds lead cleaning, AI scoring, saving to Google Sheets, sales notifications by lead priority, and an error alert.">
+          </div>
+          <div class="project__body">
+            <div>
+              <p class="project__kind">Workflow automation</p>
+              <h3 class="project__title" id="p-lead" data-edit="leadTitle" data-label="Lead qualification: title" data-group="Projects">AI Lead Qualification &amp; CRM Automation</h3>
+              <p data-edit="leadDesc" data-label="Lead qualification: description" data-group="Projects">An automated workflow that takes inbound leads from a web form, cleans the data, and uses an AI model to score each lead from 0 to 100 as Hot, Warm, or Cold. Results are logged to a Google Sheets CRM, the lead receives an email acknowledgment, and the sales team is notified according to priority. An error alert is sent if a step fails.</p>
+              <ul class="tags" aria-label="Technologies">
+                <li>n8n</li>
+                <li>OpenAI</li>
+                <li>Google Sheets</li>
+                <li>Gmail</li>
+              </ul>
+              <p class="project__zoom"><a href="assets/lead-qualification-workflow.webp" target="_blank" rel="noopener noreferrer">Open full-size screenshot<span class="visually-hidden"> (opens in a new tab)</span></a></p>
+
+            </div>
+            <div class="project__steps">
+              <h4>How it works</h4>
+              <ol class="flow" role="list">
+                <li><strong>Ingest and clean.</strong> A new form submission is normalized.</li>
+                <li><strong>Qualify with AI.</strong> A GPT model scores the lead and labels it Hot, Warm, or Cold.</li>
+                <li><strong>Save and reply.</strong> The lead is added to Google Sheets and receives an email.</li>
+                <li><strong>Notify sales.</strong> The team is alerted according to lead priority.</li>
+              </ol>
+            </div>
+          </div>
+        </article>
+
+        <article class="project" aria-labelledby="p-support">
+          <div class="project__shot">
+            <img
+              src="assets/customer-support-email-agent-1200.webp"
+              srcset="assets/customer-support-email-agent-1200.webp 1200w, assets/customer-support-email-agent.webp 2048w"
+              sizes="(max-width: 1120px) 100vw, 1120px"
+              width="2048" height="853" loading="lazy"
+              alt="Workflow editor showing an AI customer support email agent: a Gmail trigger, email cleaning and validation, an AI support agent, a human review check, Gmail replies or support team alerts, and Google Sheets logging.">
+          </div>
+          <div class="project__body">
+            <div>
+              <p class="project__kind">Workflow automation</p>
+              <h3 class="project__title" id="p-support" data-edit="supportTitle" data-label="Support email agent: title" data-group="Projects">AI Customer Support Email Agent</h3>
+              <p data-edit="supportDesc" data-label="Support email agent: description" data-group="Projects">An email-handling workflow that receives customer inquiries from Gmail, cleans and validates the content, and uses an AI support agent to prepare a response. Cases that need human review are sent to the support team, other cases receive an automatic reply, invalid emails trigger an alert, and every outcome is logged to Google Sheets.</p>
+              <ul class="tags" aria-label="Technologies">
+                <li>n8n</li>
+                <li>OpenAI</li>
+                <li>Gmail</li>
+                <li>Google Sheets</li>
+              </ul>
+              <p class="project__zoom"><a href="assets/customer-support-email-agent.webp" target="_blank" rel="noopener noreferrer">Open full-size screenshot<span class="visually-hidden"> (opens in a new tab)</span></a></p>
+
+            </div>
+            <div class="project__steps">
+              <h4>How it works</h4>
+              <ol class="flow" role="list">
+                <li><strong>Receive.</strong> A Gmail trigger picks up each new customer email.</li>
+                <li><strong>Clean and validate.</strong> The email is structured and checked. Invalid emails raise an alert.</li>
+                <li><strong>Draft with AI.</strong> A support agent prepares the result.</li>
+                <li><strong>Route and log.</strong> The email goes to human review or receives an automatic reply, and the outcome is logged to Google Sheets.</li>
+              </ol>
+            </div>
+          </div>
+        </article>
+
+        <div class="project-grid">
+          <article class="project" aria-labelledby="p-pos">
+            <span class="badge">Testing evidence available</span>
+            <h3 id="p-pos" data-edit="posTitle" data-label="AQSA POS testing: title" data-group="Projects">AQSA POS System Testing</h3>
+            <p data-edit="posDesc" data-label="AQSA POS testing: description" data-group="Projects">Manual functional testing of a point-of-sale (POS) application across sales, inventory, customer records, reports, integrations, and backup workflows.</p>
+            <ul class="project__list">
+              <li>Executed and documented test cases</li>
+              <li>Compared expected and observed results</li>
+              <li>Recorded defects, blocked checks, and limitations</li>
+              <li>Summarized the recorded test outcomes in a visual chart</li>
+            </ul>
+            <p class="project__note">The attached evidence includes the original report sign-off page and a chart based on the test totals recorded in the checklist.</p>
+            <p class="project__actions">
+              <a class="btn btn--primary" href="assets/AQSA-POS-Testing-Evidence.pdf" target="_blank" rel="noopener noreferrer">View testing evidence (PDF)</a>
+              <a class="btn btn--secondary" href="assets/AQSA-POS-Testing-Evidence.pdf" download>Download PDF</a>
+            </p>
+            <ul class="tags" aria-label="Focus areas">
+              <li>Manual testing</li>
+              <li>POS</li>
+              <li>Quality assurance</li>
+              <li>Test reporting</li>
+            </ul>
+          </article>
+
+          <article class="project" aria-labelledby="p-ckd">
+            <span class="badge">In progress</span>
+            <h3 id="p-ckd" data-edit="ckdTitle" data-label="CKD Screening AI: title" data-group="Projects">CKD Screening AI</h3>
+            <p data-edit="ckdDesc" data-label="CKD Screening AI: description" data-group="Projects">A demo exploring how AI can support screening and early risk assessment for chronic kidney disease (CKD). It is a demonstration project, not a medical or diagnostic tool.</p>
+            <p class="project__note">Demo visuals and a write-up will be added when they are ready.</p>
+            <ul class="tags" aria-label="Focus areas">
+              <li>Artificial intelligence</li>
+              <li>Healthcare</li>
+              <li>Prototype</li>
+            </ul>
+          </article>
+
+          <article class="project" aria-labelledby="p-fire">
+            <span class="badge">In progress</span>
+            <h3 id="p-fire" data-edit="fireTitle" data-label="Fire Chaser Robot: title" data-group="Projects">Fire Chaser Extinguisher Robot</h3>
+            <p data-edit="fireDesc" data-label="Fire Chaser Robot: description" data-group="Projects">A robotics project built around a fire-detection and fire-response concept.</p>
+            <p class="project__note">Technical details and build photos will be added as the project develops.</p>
+            <ul class="tags" aria-label="Focus areas">
+              <li>Robotics</li>
+              <li>Sensors</li>
+              <li>Embedded systems</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience" aria-labelledby="experience-title">
+      <div class="wrap section__grid">
+        <h2 id="experience-title">Experience</h2>
+        <ul class="entries">
+          <li class="entry">
+            <div class="entry__head">
+              <h3 class="entry__title">Intern</h3>
+            </div>
+            <p class="entry__org">AQSA IT Solutions</p>
+            <p class="entry__text" data-edit="exp1Text" data-label="Intern, AQSA IT Solutions: description" data-group="Experience and education">Internship connected to practical IT work and software quality.</p>
+          </li>
+          <li class="entry">
+            <div class="entry__head">
+              <h3 class="entry__title">Teacher</h3>
+              <p class="entry__when">6 months</p>
+            </div>
+            <p class="entry__org">The Educators</p>
+            <p class="entry__text" data-edit="exp2Text" data-label="Teacher, The Educators: description" data-group="Experience and education">Developed professional communication, responsibility, organization, and classroom-management skills while working directly with students.</p>
+          </li>
+          <li class="entry">
+            <div class="entry__head">
+              <h3 class="entry__title">Teacher</h3>
+              <p class="entry__when">October 2025 to 2026</p>
+            </div>
+            <p class="entry__org">Science Valley</p>
+            <p class="entry__text" data-edit="exp3Text" data-label="Teacher, Science Valley: description" data-group="Experience and education">Built practical workplace experience through teaching, communication, organization, and time management, and handled day-to-day professional duties.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="education" aria-labelledby="education-title">
+      <div class="wrap section__grid">
+        <h2 id="education-title">Education</h2>
+        <div>
+          <h3 class="subhead">Formal education</h3>
+          <ul class="entries">
+            <li class="entry">
+              <div class="entry__head">
+                <h4 class="entry__title" data-edit="edu1Title" data-label="Education: qualification" data-group="Experience and education">Intermediate (ICS – Physics)</h4>
+                <p class="entry__when">Completed 2025</p>
+              </div>
+              <p class="entry__org" data-edit="edu1Org" data-label="Education: institution" data-group="Experience and education">Pakistan Girls College Dina</p>
+            </li>
+          </ul>
+
+          <h3 class="subhead">Courses and training</h3>
+          <ul class="entries">
+            <li class="entry">
+              <div class="entry__head">
+                <h4 class="entry__title">Modern Robotics Specialization</h4>
+                <p class="entry__when entry__status--active" data-edit="course1Status" data-label="Modern Robotics: status" data-group="Experience and education">Currently pursuing</p>
+              </div>
+              <p class="entry__org">Northwestern University</p>
+            </li>
+            <li class="entry">
+              <div class="entry__head">
+                <h4 class="entry__title">AI Mastery</h4>
+                <p class="entry__when">Completed</p>
+              </div>
+              <p class="entry__org">AQSA IT Solutions</p>
+            </li>
+            <li class="entry">
+              <div class="entry__head">
+                <h4 class="entry__title">Elements of AI</h4>
+                <p class="entry__when">Completed</p>
+              </div>
+              <p class="entry__org">University of Helsinki</p>
+            </li>
+            <li class="entry">
+              <div class="entry__head">
+                <h4 class="entry__title">AI Elements</h4>
+                <p class="entry__when">Completed</p>
+              </div>
+              <p class="entry__org">Riphah University</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="addedContent" aria-labelledby="added-title" hidden>
+      <div class="wrap section__grid">
+        <h2 id="added-title">More</h2>
+        <div class="managed-list" id="publicManagedEntries"></div>
+      </div>
+    </section>
+
+    <section class="section" id="certificates" aria-labelledby="certificates-title" hidden>
+      <div class="wrap section__grid">
+        <h2 id="certificates-title">Certificates</h2>
+        <div class="entries" id="certificateList"></div>
+      </div>
+    </section>
+
+    <section class="section" id="customContent" aria-labelledby="custom-title" hidden>
+      <div class="wrap section__grid">
+        <h2 id="custom-title">More</h2>
+        <div class="entries" id="customList"></div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="wrap section__grid">
+        <h2 id="contact-title">Contact</h2>
+        <div>
+          <p class="contact__copy">For opportunities in AI automation, robotics, or software testing, email me or connect on LinkedIn.</p>
+          <a class="contact__email" id="contactEmail" href="mailto:kiranzahid188@gmail.com">kiranzahid188@gmail.com</a>
+          <a class="contact__email contact__phone" id="contactPhone" href="tel:03187977782" aria-label="Call 03187977782">03187977782</a>
+          <p class="contact__meta" id="contactAvailability">Availability: part-time, night shifts, and weekends.</p>
+          <ul class="link-list" aria-label="Profiles">
+            <li><a href="https://www.linkedin.com/in/kiran-zahid-3a4a5a433" target="_blank" rel="noopener noreferrer">LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+            <li><a href="https://github.com/Nexus-Kinematics" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+            <li><a href="https://www.fiverr.com/s/Vrrma2z" target="_blank" rel="noopener noreferrer">Fiverr<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+            <li><a href="https://www.upwork.com/freelancers/~01c463310230087cd5?mp_source=share" target="_blank" rel="noopener noreferrer">Upwork<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <p>&copy; <span id="year">2026</span> Kiran Zahid</p>
+      <ul class="link-list" aria-label="Footer">
+        <li><a href="Kiran-Zahid-CV.pdf" download>Download CV (PDF)</a></li>
+        <li><a href="#top">Back to top</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

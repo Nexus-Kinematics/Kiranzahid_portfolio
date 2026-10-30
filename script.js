@@ -89,6 +89,7 @@
     var portrait=$('.portrait img'); var portraitSrc=mediaUrl(p.portrait); if(portrait&&portraitSrc){portrait.src=portraitSrc;portrait.removeAttribute('srcset');portrait.alt=p.portraitAlt||((p.name||'Portfolio owner')+' portrait');}
     var cv=mediaUrl(p.cv)||'Kiran-Zahid-CV.pdf'; ['#heroCvLink','.site-footer a[href$="Kiran-Zahid-CV.pdf"]'].forEach(function(sel){var a=$(sel);if(a){a.href=cv;if(!/^data:application\/pdf/i.test(cv))a.setAttribute('download','');else a.removeAttribute('download');}});
     var email=p.email||contact.email||''; var em=$('#contactEmail'); if(em){em.textContent=email;em.href=email?'mailto:'+email:'#';}
+    var phone=p.phone||contact.phone||''; var ph=$('#contactPhone'); if(ph){ph.textContent=phone;ph.href=phone?'tel:'+phone.replace(/[^0-9+]/g,''):'#';ph.setAttribute('aria-label',phone?'Call '+phone:'Phone number unavailable');}
     setText('#contactAvailability','Availability: '+(p.availability||contact.availability||'')); if(contact.copy)setText('.contact__copy',contact.copy);
     var footer=$('.site-footer p'); if(footer){footer.replaceChildren(document.createTextNode('© '));footer.appendChild(node('span','',String(new Date().getFullYear())));footer.appendChild(document.createTextNode(' '+(p.name||'Kiran Zahid')));}
     renderLinks();renderSkills();renderProjects();renderExperience();renderEducation();renderCertificates();renderCustom();
