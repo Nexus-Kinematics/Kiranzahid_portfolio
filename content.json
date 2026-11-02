@@ -2,7 +2,8 @@
   "site": {
     "title": "Kiran Zahid — AI Automation · Robotics · QA",
     "description": "Kiran Zahid — AI automation, robotics learning, and software quality assurance portfolio.",
-    "theme": "navy-teal"
+    "theme": "navy-teal",
+    "projectsIntro": "Explore selected projects highlighting my technical skills, hands-on work, and ongoing development across AI, automation, and robotics."
   },
   "profile": {
     "name": "Kiran Zahid",
@@ -108,7 +109,7 @@
       "video": "",
       "pdf": "",
       "link": "",
-      "notes": "Replace this illustrative diagram with your actual workflow screenshot when available."
+      "notes": ""
     },
     {
       "title": "AI Customer Support Email Agent",
@@ -126,7 +127,7 @@
       "video": "",
       "pdf": "",
       "link": "",
-      "notes": "Illustrative concept — replace with a real project screenshot when available."
+      "notes": ""
     },
     {
       "title": "AQSA POS System Testing",
@@ -184,16 +185,16 @@
   "experience": [
     {
       "type": "INTERNSHIP",
-      "duration": "Date not specified",
+      "duration": "October 2026 – Present",
       "role": "Intern",
       "organization": "AQSA IT Solutions",
-      "description": "Internship experience connected to practical IT work and software quality. Specific responsibilities and dates can be added when confirmed.",
+      "description": "Internship experience connected to practical IT work and software quality.",
       "link": "",
       "image": ""
     },
     {
       "type": "TEACHING",
-      "duration": "Six months",
+      "duration": "April 2025 – October 2025",
       "role": "Teacher",
       "organization": "The Educators",
       "description": "Developed communication, organization, responsibility, and classroom-management skills while working directly with students.",
@@ -202,10 +203,10 @@
     },
     {
       "type": "TEACHING",
-      "duration": "Dates to confirm",
-      "role": "Teacher",
+      "duration": "October 2025 – September 2026",
+      "role": "Senior Teacher (Classes 9–10)",
       "organization": "Science Valley",
-      "description": "Built practical workplace experience through teaching, communication, organization, time management, and day-to-day professional responsibilities.",
+      "description": "Taught students in Classes 9 and 10, developing strong communication, classroom management, organization, and time-management skills.",
       "link": "",
       "image": ""
     }
@@ -225,7 +226,7 @@
       "type": "SPECIALIZATION",
       "title": "Modern Robotics",
       "institution": "Northwestern University-associated specialization coursework",
-      "status": "Currently pursuing, if still accurate",
+      "status": "Currently pursuing",
       "description": "",
       "certificateImage": "",
       "certificatePdf": "",
@@ -235,7 +236,7 @@
       "type": "COURSE",
       "title": "AI Mastery",
       "institution": "AQSA IT Solutions",
-      "status": "Reported completed",
+      "status": "Completed · 21 September 2026",
       "description": "",
       "certificateImage": "",
       "certificatePdf": "",
@@ -245,7 +246,7 @@
       "type": "COURSE",
       "title": "Elements of AI",
       "institution": "University of Helsinki",
-      "status": "Reported completed",
+      "status": "Completed · 25 August 2026",
       "description": "",
       "certificateImage": "",
       "certificatePdf": "",
@@ -255,7 +256,7 @@
       "type": "COURSE",
       "title": "AI Elements",
       "institution": "Riphah University",
-      "status": "Reported completed",
+      "status": "Completed · 10 August 2026",
       "description": "",
       "certificateImage": "",
       "certificatePdf": "",
@@ -265,7 +266,7 @@
   "certificates": [],
   "contact": {
     "heading": "Have a project or opportunity in mind?",
-    "description": "I’m interested in opportunities related to AI automation, robotics, and software testing. Let’s connect.",
+    "description": "For professional enquiries and collaboration opportunities in AI automation, robotics, and software testing, please contact me by email or connect with me on LinkedIn.",
     "emailLabel": "Email me",
     "extraFields": [
       {
