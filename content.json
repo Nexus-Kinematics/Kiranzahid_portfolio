@@ -184,15 +184,6 @@
   ],
   "experience": [
     {
-      "type": "INTERNSHIP",
-      "duration": "October 2026 – Present",
-      "role": "Intern",
-      "organization": "AQSA IT Solutions",
-      "description": "Internship experience connected to practical IT work and software quality.",
-      "link": "",
-      "image": ""
-    },
-    {
       "type": "TEACHING",
       "duration": "April 2025 – October 2025",
       "role": "Teacher",
@@ -207,6 +198,15 @@
       "role": "Senior Teacher (Classes 9–10)",
       "organization": "Science Valley",
       "description": "Taught students in Classes 9 and 10, developing strong communication, classroom management, organization, and time-management skills.",
+      "link": "",
+      "image": ""
+    },
+    {
+      "type": "INTERNSHIP",
+      "duration": "October 2026 – Present",
+      "role": "Intern",
+      "organization": "AQSA IT Solutions",
+      "description": "Internship experience connected to practical IT work and software quality.",
       "link": "",
       "image": ""
     }
@@ -279,5 +279,6 @@
     "tagline": "Building, learning, testing — one step at a time.",
     "copyright": "Kiran Zahid"
   },
-  "extraFields": []
+  "extraFields": [],
+  "certificateDrafts": []
 }
