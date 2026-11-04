@@ -1,27 +1,27 @@
 {
   "site": {
-    "title": "Kiran Zahid — AI Automation · Robotics · QA",
-    "description": "Kiran Zahid — AI automation, robotics learning, and software quality assurance portfolio.",
+    "title": "Kiran Zahid — AI Automation · Robotics · Software QA",
+    "description": "Portfolio of Kiran Zahid: practical AI workflow automation, documented software testing, robotics coursework, projects, and professional experience.",
     "theme": "navy-teal",
     "projectsIntro": "Explore selected projects highlighting my technical skills, hands-on work, and ongoing development across AI, automation, and robotics."
   },
   "profile": {
     "name": "Kiran Zahid",
     "initials": "KZ",
-    "headline": "AI Automation Developer · Robotics Learner · Software QA Tester",
-    "eyebrow": "Open to meaningful opportunities",
-    "intro": "I build practical AI-assisted automations, explore robotics, and test software workflows. I enjoy turning complex processes into clear, useful systems.",
-    "aboutLead": "I’m interested in building technology that makes everyday work more efficient, reliable, and easier to understand.",
+    "headline": "AI Automation Developer · Software QA · Robotics Learner",
+    "eyebrow": "Open to entry-level roles, internships & academic opportunities",
+    "intro": "I design practical AI-assisted workflows with n8n, OpenAI, Gmail, and Google Sheets, and document software testing through structured test cases and clear results. I am also building my foundations in robotics through Northwestern University coursework.",
+    "aboutLead": "Practical AI automation, structured software testing, and a growing foundation in robotics.",
     "aboutParagraphs": [
-      "My focus spans AI-assisted workflow automation, robotics fundamentals, and software quality assurance. I explore tools such as n8n, Zapier, OpenAI integrations, Gmail, and Google Sheets, and bring a structured testing mindset to software workflows.",
-      "I’m pursuing the Modern Robotics Specialization associated with Northwestern University. My teaching experience has also strengthened my communication, organization, and time-management skills."
+      "My automation work brings together n8n, Zapier, OpenAI models, Gmail, and Google Sheets to streamline lead qualification and customer-support email workflows.",
+      "I have documented manual functional testing for a point-of-sale application, including test-case execution and comparison of expected and actual results. Alongside this practical work, I am pursuing Modern Robotics coursework and continue developing my robotics fundamentals."
     ],
     "location": "Punjab, Pakistan",
     "interests": "Automation · Robotics · QA",
     "languages": "English · Urdu · French (basic)",
     "portrait": "assets/kiran-profile.jpg",
     "portraitAlt": "Kiran Zahid portrait",
-    "availability": "Part-time, nights & weekends (confirm current availability)",
+    "availability": "Open to relevant entry-level roles, internships, and academic opportunities; part-time, evenings, and weekends.",
     "email": "kiranzahid188@gmail.com",
     "cv": "Kiran-Zahid-CV.pdf",
     "phone": "03187977782"
@@ -96,8 +96,8 @@
     {
       "title": "AI Lead Qualification & CRM Automation",
       "category": "Automation",
-      "status": "Project overview",
-      "description": "An AI-assisted workflow concept for cleaning incoming lead data, assigning Hot/Warm/Cold categories, recording results, and routing notifications based on priority.",
+      "status": "Built workflow · Screenshots available",
+      "description": "An n8n workflow that receives web-form leads, normalizes incoming data, uses an OpenAI model to assign a Hot, Warm, or Cold priority, records the result in Google Sheets, sends an acknowledgement email, and notifies the team according to lead priority.",
       "tags": [
         "n8n",
         "OpenAI",
@@ -109,13 +109,15 @@
       "video": "",
       "pdf": "",
       "link": "",
-      "notes": ""
+      "notes": "",
+      "contribution": "My contribution: I designed and configured the workflow steps and the connections between the form, OpenAI, Google Sheets, and Gmail.",
+      "outcome": "Result: A repeatable lead-triage workflow that records lead scores in one spreadsheet and sends priority-based notifications. No unverified time-saving or conversion figures are claimed."
     },
     {
       "title": "AI Customer Support Email Agent",
       "category": "Automation",
-      "status": "Project overview",
-      "description": "An AI-assisted email workflow concept for organizing inquiries, preparing responses, routing cases for human review, and logging outcomes.",
+      "status": "Built workflow · Screenshots available",
+      "description": "An n8n email workflow that receives customer inquiries through Gmail, cleans and validates message data, prepares an AI-assisted response, routes cases for human review or an eligible automated reply, and logs outcomes in Google Sheets.",
       "tags": [
         "n8n",
         "OpenAI",
@@ -127,13 +129,15 @@
       "video": "",
       "pdf": "",
       "link": "",
-      "notes": ""
+      "notes": "",
+      "contribution": "My contribution: I designed and configured the email intake, validation, AI response, review-routing, and logging steps.",
+      "outcome": "Result: A structured email-support workflow with validation, AI-assisted drafts, human-review routing, and a record of handled inquiries."
     },
     {
       "title": "AQSA POS System Testing",
       "category": "Quality Assurance",
-      "status": "Testing evidence available",
-      "description": "Manual functional testing of a point-of-sale (POS) application across sales, inventory, customer records, reports, integrations, and backup workflows.",
+      "status": "Completed testing exercise · 100 test cases documented",
+      "description": "Manual functional testing of a point-of-sale application across sales, inventory, customer records, reports, integrations, and backup workflows. The submitted test record contains 100 test cases.",
       "tags": [
         "Manual testing",
         "POS",
@@ -145,12 +149,14 @@
       "video": "",
       "pdf": "assets/AQSA-POS-Testing-Evidence.pdf",
       "link": "",
-      "notes": "The attached evidence includes the original report sign-off page and a chart based on the test totals recorded in the checklist."
+      "notes": "The attached evidence includes the original report sign-off page and a chart based on the test totals recorded in the checklist.",
+      "contribution": "My contribution: I executed and documented test cases, compared expected and actual results, and recorded outcomes and limitations.",
+      "outcome": "Result: A documented test record covering 100 test cases, including expected-versus-actual comparisons and recorded outcomes. Supporting evidence is available as a PDF."
     },
     {
       "title": "Fire Chaser Extinguisher Robot",
       "category": "Robotics",
-      "status": "In progress",
+      "status": "Concept · In progress",
       "description": "A robotics project concept centered on fire detection and response automation. Technical details will be added as the project develops.",
       "tags": [
         "Robotics",
@@ -167,7 +173,7 @@
     {
       "title": "CKD Screening AI",
       "category": "AI Prototype",
-      "status": "In progress",
+      "status": "Prototype · In progress · Not a diagnostic tool",
       "description": "An exploratory AI screening concept. It is for learning and demonstration only and is not a diagnostic medical tool.",
       "tags": [
         "AI",
@@ -266,7 +272,7 @@
   "certificates": [],
   "contact": {
     "heading": "Have a project or opportunity in mind?",
-    "description": "For professional enquiries and collaboration opportunities in AI automation, robotics, and software testing, please contact me by email or connect with me on LinkedIn.",
+    "description": "For professional opportunities, project enquiries, or collaboration, please email me or start a WhatsApp conversation. I welcome relevant opportunities in AI automation, robotics, and software quality assurance.",
     "emailLabel": "Email me",
     "extraFields": [
       {
@@ -279,6 +285,5 @@
     "tagline": "Building, learning, testing — one step at a time.",
     "copyright": "Kiran Zahid"
   },
-  "extraFields": [],
-  "certificateDrafts": []
+  "extraFields": []
 }

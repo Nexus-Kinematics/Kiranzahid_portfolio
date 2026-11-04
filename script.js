@@ -42,6 +42,8 @@
       if (imgUrl) { var shot=node('div','project__shot'); var img=node('img'); img.src=imgUrl; img.alt=p.imageAlt || (p.title+' image'); img.loading='lazy'; shot.appendChild(img); article.appendChild(shot); }
       var body=node('div','project__body'); var main=node('div'); main.appendChild(node('p','project__kind',p.category || 'Project')); main.appendChild(node('h3','project__title',p.title || 'Untitled project')); if(p.status) main.appendChild(node('p','project__kind',p.status)); main.appendChild(node('p','',p.description || ''));
       if (Array.isArray(p.tags) && p.tags.length) { var tags=node('ul','tags'); tags.setAttribute('aria-label','Technologies'); p.tags.forEach(function(t){tags.appendChild(node('li','',t));}); main.appendChild(tags); }
+      if (p.contribution) main.appendChild(node('p','project__note',p.contribution));
+      if (p.outcome) main.appendChild(node('p','project__outcome',p.outcome));
       if (p.notes) main.appendChild(node('p','project__note',p.notes));
       var media=node('div','project__media-links');
       if (p.image && imgUrl) media.appendChild(link('Open full-size image',imgUrl,'project__media-link'));
@@ -88,12 +90,15 @@
     var about=$$('.prose p'); if(p.aboutLead && about[0])about[0].textContent=p.aboutLead; if(Array.isArray(p.aboutParagraphs)){var host=$('.prose'); if(host){host.replaceChildren(); if(p.aboutLead)host.appendChild(node('p','lead',p.aboutLead));p.aboutParagraphs.forEach(function(t){host.appendChild(node('p','',t));}); if(p.location||p.languages){host.appendChild(node('p','', [p.location,p.languages].filter(Boolean).join(' · ')));}}}
     var portrait=$('.portrait img'); var portraitSrc=mediaUrl(p.portrait); if(portrait&&portraitSrc){portrait.src=portraitSrc;portrait.removeAttribute('srcset');portrait.alt=p.portraitAlt||((p.name||'Portfolio owner')+' portrait');}
     var cv=mediaUrl(p.cv)||'Kiran-Zahid-CV.pdf'; ['#heroCvLink','.site-footer a[href$="Kiran-Zahid-CV.pdf"]'].forEach(function(sel){var a=$(sel);if(a){a.href=cv;if(!/^data:application\/pdf/i.test(cv))a.setAttribute('download','');else a.removeAttribute('download');}});
-    var email=p.email||contact.email||''; var em=$('#contactEmail'); if(em){em.textContent=email;em.href=email?'mailto:'+email:'#';}
-    var phone=p.phone||contact.phone||''; var ph=$('#contactPhone'); if(ph){ph.textContent=phone;ph.href=phone?'tel:'+phone.replace(/[^0-9+]/g,''):'#';ph.setAttribute('aria-label',phone?'Call '+phone:'Phone number unavailable');}
+    var email=p.email||contact.email||''; var em=$('#contactEmail'); if(em){em.textContent=email;em.href=email?'mailto:'+email:'#';em.setAttribute('aria-label',email?'Compose an email to '+email:'Email unavailable');}
+    var phone=p.phone||contact.phone||''; var digits=phone.replace(/\D/g,''); var intl=digits.indexOf('0')===0?'92'+digits.slice(1):digits; var displayPhone=digits.indexOf('0')===0?'+92 '+digits.slice(1,4)+' '+digits.slice(4):('+'+intl); var ph=$('#contactPhone'); if(ph){ph.textContent=displayPhone;ph.href=intl?'https://wa.me/'+intl:'#';ph.target='_blank';ph.rel='noopener noreferrer';ph.setAttribute('aria-label',phone?'Start a WhatsApp chat with '+displayPhone:'WhatsApp unavailable');}
+    var emailCopy=$('#contactEmail')&&$('#contactEmail').parentElement.querySelector('[data-copy]'); if(emailCopy&&email)emailCopy.setAttribute('data-copy',email); var phoneCopy=$('#contactPhone')&&$('#contactPhone').parentElement.querySelector('[data-copy]'); if(phoneCopy&&intl)phoneCopy.setAttribute('data-copy','+'+intl);
     setText('#contactAvailability','Availability: '+(p.availability||contact.availability||'')); if(contact.copy)setText('.contact__copy',contact.copy);
     var footer=$('.site-footer p'); if(footer){footer.replaceChildren(document.createTextNode('© '));footer.appendChild(node('span','',String(new Date().getFullYear())));footer.appendChild(document.createTextNode(' '+(p.name||'Kiran Zahid')));}
     renderLinks();renderSkills();renderProjects();renderExperience();renderEducation();renderCertificates();renderCustom();
   }
+  document.addEventListener('click',function(e){var b=e.target.closest('[data-copy]');if(!b)return;var value=b.getAttribute('data-copy')||'';if(!value)return;var done=function(){var old=b.textContent;b.textContent='Copied';window.setTimeout(function(){b.textContent=old;},1400);};if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(value).then(done).catch(function(){fallbackCopy(value,done);});}else fallbackCopy(value,done);});
+  function fallbackCopy(value,done){var field=document.createElement('textarea');field.value=value;field.setAttribute('readonly','');field.style.position='fixed';field.style.opacity='0';document.body.appendChild(field);field.select();try{document.execCommand('copy');done();}catch(e){}field.remove();}
   var content={};
-  fetch('content.json?v=20261027-pdf-buttons-fix',{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('content unavailable');return r.json();}).then(applyContent).catch(function(err){console.warn('Portfolio content could not load; showing built-in HTML fallback.',err);});
+  fetch('content.json?v=20261104-professional-refresh',{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('content unavailable');return r.json();}).then(applyContent).catch(function(err){console.warn('Portfolio content could not load; showing built-in HTML fallback.',err);});
 })();
