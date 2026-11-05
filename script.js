@@ -36,7 +36,7 @@
     $$('.project',section).forEach(function (n) { n.remove(); });
     var oldGrid=$('.project-grid',section); if(oldGrid)oldGrid.remove();
     var grid=null;
-    (content.projects || []).forEach(function (p, i) {
+    (content.projects || []).filter(function (p) { return p.visible !== false && !/in progress|concept|prototype/i.test((p.status || '') + ' ' + (p.category || '')); }).forEach(function (p, i) {
       var article=node('article','project'); article.setAttribute('aria-label',p.title || ('Project '+(i+1)));
       var imgUrl=mediaUrl(p.image);
       if (imgUrl) { var shot=node('div','project__shot'); var img=node('img'); img.src=imgUrl; img.alt=p.imageAlt || (p.title+' image'); img.loading='lazy'; shot.appendChild(img); article.appendChild(shot); }
@@ -59,7 +59,8 @@
         actions.appendChild(viewPdf); actions.appendChild(downloadPdf); main.appendChild(actions);
       }
       var vid=mediaUrl(p.video); if(vid) { if(/^data:video|\.(mp4|webm|ogg)(\?|$)/i.test(vid)) { var video=node('video','project__video'); video.controls=true; video.preload='metadata'; video.src=vid; media.appendChild(video); } else media.appendChild(link('Watch project video',vid,'project__media-link')); }
-      var projectLink=mediaUrl(p.link); if(projectLink) media.appendChild(link('Project link',projectLink,'project__media-link'));
+      var projectLink=mediaUrl(p.link); if(projectLink) media.appendChild(link('Project demonstration',projectLink,'project__media-link'));
+      var repository=mediaUrl(p.repository); if(repository) media.appendChild(link('View source on GitHub',repository,'project__media-link'));
       if(media.childNodes.length) main.appendChild(media); body.appendChild(main); article.appendChild(body);
       if (i < 2) container.appendChild(article);
       else { if(!grid){grid=node('div','project-grid');container.appendChild(grid);} grid.appendChild(article); }
@@ -72,9 +73,9 @@
   function renderEducation() {
     var section=$('#education'); if(!section)return; var wrap=$('div',section); if(!wrap)return; var oldLists=$$('.entries',section); oldLists.forEach(function(l){l.replaceChildren();});
     var formal= (content.education||[]).filter(function(e){return /formal|education/i.test(e.type||'');});
-    var courses=(content.education||[]).filter(function(e){return !/formal|education/i.test(e.type||'');});
+    var courses=(content.education||[]).filter(function(e){return !/formal|education/i.test(e.type||'');}).sort(function(a,b){return Number(!!b.featured)-Number(!!a.featured);});
     var lists=$$('.entries',section); var formalList=lists[0], courseList=lists[1];
-    function addEntry(list,e){if(!list)return;var li=node('li','entry');var head=node('div','entry__head');head.appendChild(node('h4','entry__title',e.title||'Education'));if(e.status)head.appendChild(node('p','entry__when',e.status));li.appendChild(head);if(e.institution)li.appendChild(node('p','entry__org',e.institution));if(e.description)li.appendChild(node('p','entry__text',e.description));var im=mediaUrl(e.certificateImage);if(im){var img=node('img');img.src=im;img.alt=(e.title||'')+' certificate';img.loading='lazy';img.style.maxWidth='240px';img.style.borderRadius='12px';li.appendChild(img);}var pdf=mediaUrl(e.certificatePdf);if(pdf)li.appendChild(link('View certificate PDF',pdf));var l=mediaUrl(e.link);if(l)li.appendChild(link('Course details',l));list.appendChild(li);}
+    function addEntry(list,e){if(!list)return;var li=node('li',e.featured?'entry entry--featured':'entry');var head=node('div','entry__head');head.appendChild(node('h4','entry__title',e.title||'Education'));if(e.status)head.appendChild(node('p',e.featured?'entry__when entry__status--active':'entry__when',e.status));li.appendChild(head);if(e.institution)li.appendChild(node('p','entry__org',e.institution));if(e.description)li.appendChild(node('p','entry__text',e.description));var im=mediaUrl(e.certificateImage);if(im){var img=node('img');img.src=im;img.alt=(e.title||'')+' certificate';img.loading='lazy';img.style.maxWidth='240px';img.style.borderRadius='12px';li.appendChild(img);}var pdf=mediaUrl(e.certificatePdf);if(pdf)li.appendChild(link('View certificate PDF',pdf));var l=mediaUrl(e.link);if(l)li.appendChild(link('Course details',l));list.appendChild(li);}
     formal.forEach(function(e){addEntry(formalList,e);});courses.forEach(function(e){addEntry(courseList,e);});
   }
   function renderCertificates() {

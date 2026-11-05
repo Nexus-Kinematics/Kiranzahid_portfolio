@@ -1,17 +1,17 @@
 {
   "site": {
     "title": "Kiran Zahid — AI Automation · Robotics · Software QA",
-    "description": "Portfolio of Kiran Zahid: practical AI workflow automation, documented software testing, robotics coursework, projects, and professional experience.",
+    "description": "Kiran Zahid’s portfolio: practical AI workflow automation, robotics learning, and documented software quality assurance work.",
     "theme": "navy-teal",
     "projectsIntro": "Explore selected projects highlighting my technical skills, hands-on work, and ongoing development across AI, automation, and robotics."
   },
   "profile": {
     "name": "Kiran Zahid",
     "initials": "KZ",
-    "headline": "AI Automation Developer · Software QA · Robotics Learner",
-    "eyebrow": "Open to entry-level roles, internships & academic opportunities",
-    "intro": "I design practical AI-assisted workflows with n8n, OpenAI, Gmail, and Google Sheets, and document software testing through structured test cases and clear results. I am also building my foundations in robotics through Northwestern University coursework.",
-    "aboutLead": "Practical AI automation, structured software testing, and a growing foundation in robotics.",
+    "headline": "AI Automation Developer · Robotics Learner · Software QA Tester",
+    "eyebrow": "Open to meaningful opportunities",
+    "intro": "I build practical n8n and Zapier workflows that connect OpenAI, Gmail, and Google Sheets, and I document software testing with clear test cases and results. I’m also developing my foundations in robotics and automation.",
+    "aboutLead": "I build practical automations and approach software quality with a structured, detail-oriented testing mindset.",
     "aboutParagraphs": [
       "My automation work brings together n8n, Zapier, OpenAI models, Gmail, and Google Sheets to streamline lead qualification and customer-support email workflows.",
       "I have documented manual functional testing for a point-of-sale application, including test-case execution and comparison of expected and actual results. Alongside this practical work, I am pursuing Modern Robotics coursework and continue developing my robotics fundamentals."
@@ -21,7 +21,7 @@
     "languages": "English · Urdu · French (basic)",
     "portrait": "assets/kiran-profile.jpg",
     "portraitAlt": "Kiran Zahid portrait",
-    "availability": "Open to relevant entry-level roles, internships, and academic opportunities; part-time, evenings, and weekends.",
+    "availability": "Part-time, nights & weekends (confirm current availability)",
     "email": "kiranzahid188@gmail.com",
     "cv": "Kiran-Zahid-CV.pdf",
     "phone": "03187977782"
@@ -96,8 +96,8 @@
     {
       "title": "AI Lead Qualification & CRM Automation",
       "category": "Automation",
-      "status": "Built workflow · Screenshots available",
-      "description": "An n8n workflow that receives web-form leads, normalizes incoming data, uses an OpenAI model to assign a Hot, Warm, or Cold priority, records the result in Google Sheets, sends an acknowledgement email, and notifies the team according to lead priority.",
+      "status": "Built workflow · Documentation available",
+      "description": "A six-stage n8n workflow that receives web-form leads, normalizes incoming data, uses an OpenAI model to classify each lead into one of three priority levels (Hot, Warm, or Cold), records the result in Google Sheets, sends an acknowledgement email, and notifies the team according to priority.",
       "tags": [
         "n8n",
         "OpenAI",
@@ -111,13 +111,15 @@
       "link": "",
       "notes": "",
       "contribution": "My contribution: I designed and configured the workflow steps and the connections between the form, OpenAI, Google Sheets, and Gmail.",
-      "outcome": "Result: A repeatable lead-triage workflow that records lead scores in one spreadsheet and sends priority-based notifications. No unverified time-saving or conversion figures are claimed."
+      "outcome": "Measured scope: six connected workflow stages and three lead-priority categories. The workflow centralizes lead records and routes follow-up notifications; processing-time and time-saved benchmarks have not been measured.",
+      "visible": true,
+      "repository": ""
     },
     {
       "title": "AI Customer Support Email Agent",
       "category": "Automation",
-      "status": "Built workflow · Screenshots available",
-      "description": "An n8n email workflow that receives customer inquiries through Gmail, cleans and validates message data, prepares an AI-assisted response, routes cases for human review or an eligible automated reply, and logs outcomes in Google Sheets.",
+      "status": "Built workflow · Documentation available",
+      "description": "A six-stage n8n workflow for customer-support email: Gmail intake, message cleaning and validation, AI-assisted response preparation, human-review or eligible auto-reply routing, invalid-email alerting, and outcome logging in Google Sheets.",
       "tags": [
         "n8n",
         "OpenAI",
@@ -131,12 +133,14 @@
       "link": "",
       "notes": "",
       "contribution": "My contribution: I designed and configured the email intake, validation, AI response, review-routing, and logging steps.",
-      "outcome": "Result: A structured email-support workflow with validation, AI-assisted drafts, human-review routing, and a record of handled inquiries."
+      "outcome": "Measured scope: six defined workflow stages across email intake, response preparation, review/routing, alerts, and logging. No verified response-time or labor-savings benchmark is currently available.",
+      "visible": true,
+      "repository": ""
     },
     {
       "title": "AQSA POS System Testing",
       "category": "Quality Assurance",
-      "status": "Completed testing exercise · 100 test cases documented",
+      "status": "Completed testing exercise · Evidence available",
       "description": "Manual functional testing of a point-of-sale application across sales, inventory, customer records, reports, integrations, and backup workflows. The submitted test record contains 100 test cases.",
       "tags": [
         "Manual testing",
@@ -151,41 +155,9 @@
       "link": "",
       "notes": "The attached evidence includes the original report sign-off page and a chart based on the test totals recorded in the checklist.",
       "contribution": "My contribution: I executed and documented test cases, compared expected and actual results, and recorded outcomes and limitations.",
-      "outcome": "Result: A documented test record covering 100 test cases, including expected-versus-actual comparisons and recorded outcomes. Supporting evidence is available as a PDF."
-    },
-    {
-      "title": "Fire Chaser Extinguisher Robot",
-      "category": "Robotics",
-      "status": "Concept · In progress",
-      "description": "A robotics project concept centered on fire detection and response automation. Technical details will be added as the project develops.",
-      "tags": [
-        "Robotics",
-        "Sensors",
-        "Embedded systems"
-      ],
-      "image": "",
-      "imageAlt": "Fire chaser robot project image",
-      "video": "",
-      "pdf": "",
-      "link": "",
-      "notes": ""
-    },
-    {
-      "title": "CKD Screening AI",
-      "category": "AI Prototype",
-      "status": "Prototype · In progress · Not a diagnostic tool",
-      "description": "An exploratory AI screening concept. It is for learning and demonstration only and is not a diagnostic medical tool.",
-      "tags": [
-        "AI",
-        "Prototype",
-        "Responsible AI"
-      ],
-      "image": "",
-      "imageAlt": "CKD screening project image",
-      "video": "",
-      "pdf": "",
-      "link": "",
-      "notes": "Not intended for medical diagnosis."
+      "outcome": "Measured scope: 100 documented test cases across multiple POS functional areas, with supporting test evidence available as a PDF.",
+      "visible": true,
+      "repository": ""
     }
   ],
   "experience": [
@@ -232,11 +204,12 @@
       "type": "SPECIALIZATION",
       "title": "Modern Robotics",
       "institution": "Northwestern University-associated specialization coursework",
-      "status": "Currently pursuing",
-      "description": "",
+      "status": "Currently pursuing · Featured technical coursework",
+      "description": "Featured technical coursework: Northwestern University Modern Robotics Specialization, currently in progress.",
       "certificateImage": "",
       "certificatePdf": "",
-      "link": ""
+      "link": "",
+      "featured": true
     },
     {
       "type": "COURSE",

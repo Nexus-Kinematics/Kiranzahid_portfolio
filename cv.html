@@ -12,27 +12,27 @@
     @font-face{font-family:"Source Serif 4";src:url("fonts/source-serif-4-latin-wght-normal.woff2") format("woff2");font-weight:200 900;font-display:swap}
     :root{--ink:#12212b;--muted:#485964;--line:#c9d4da;--accent:#0b6f6e}
     *{box-sizing:border-box}
-    body{margin:0;background:#eef2f4;color:var(--ink);font-family:"Source Serif 4",Georgia,serif;font-size:9.2pt;line-height:1.26}
+    body{margin:0;background:#eef2f4;color:var(--ink);font-family:"Source Serif 4",Georgia,serif;font-size:9.4pt;line-height:1.32}
     .toolbar{max-width:210mm;margin:1rem auto 0;padding:0 1rem;display:flex;gap:.75rem;align-items:center;justify-content:space-between;font:600 .9rem "Bricolage Grotesque","Segoe UI",sans-serif}
     .toolbar a,.toolbar button{color:var(--accent);background:none;border:1.5px solid var(--accent);border-radius:8px;padding:.5rem 1rem;font:inherit;cursor:pointer;text-decoration:none}
     .toolbar a:focus-visible,.toolbar button:focus-visible,.cv a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
-    .cv{width:210mm;max-width:100%;margin:1rem auto 2rem;background:#fff;padding:7mm 10mm 6mm}
+    .cv{width:210mm;max-width:100%;margin:1rem auto 2rem;background:#fff;padding:10mm 13mm 9mm}
     h1,h2,h3{font-family:"Bricolage Grotesque","Segoe UI",sans-serif;margin:0;letter-spacing:-.01em}
     h1{font-size:25pt;line-height:1.05;font-weight:750}
     .role{margin:.2rem 0 .5rem;color:var(--accent);font:600 13pt "Bricolage Grotesque","Segoe UI",sans-serif}
     .contact{margin:0;font-size:9.5pt;color:var(--muted)}
     .contact a{color:var(--accent)}
-    h2{margin:.55rem 0 .2rem;padding-bottom:.2rem;border-bottom:1.5px solid var(--ink);font-size:11pt;font-weight:700}
-    h3{font-size:10.5pt;font-weight:650}
-    p{margin:0 0 .25rem}
-    ul{margin:.08rem 0 .22rem;padding-left:1.1rem}
+    h2{margin:.65rem 0 .25rem;padding-bottom:.15rem;border-bottom:1.2px solid var(--ink);font-size:10.2pt;font-weight:700}
+    h3{font-size:9.6pt;font-weight:650}
+    p{margin:0 0 .22rem}
+    ul{margin:.08rem 0 .22rem;padding-left:1.05rem}
     li{margin:.04rem 0}
     .row{display:flex;justify-content:space-between;gap:1rem;align-items:baseline}
     .row span{color:var(--muted);font-size:9.5pt;white-space:nowrap}
     .org{color:var(--muted);margin:0 0 .15rem}
-    .item{break-inside:avoid;margin-bottom:.3rem}
+    .item{break-inside:avoid;margin-bottom:.28rem}
     @page{size:A4;margin:0}
-    @media print{body{background:#fff;font-size:9.2pt;line-height:1.24}.toolbar{display:none}.cv{margin:0;width:auto;padding:7mm 10mm}.item{margin-bottom:.22rem}h2{margin:.5rem 0 .18rem}}
+    @media print{body{background:#fff;font-size:9.1pt;line-height:1.25}.toolbar{display:none}.cv{margin:0;width:auto;padding:9mm 12mm 8mm}.item{margin-bottom:.2rem}h2{margin:.5rem 0 .18rem}p{margin-bottom:.15rem}ul{margin-bottom:.15rem}}
   </style>
 </head>
 <body>
@@ -43,8 +43,8 @@
   <main class="cv">
     <header>
       <h1>Kiran Zahid</h1>
-      <p class="role">AI Automation Developer · Software QA · Robotics Learner</p>
-      <p class="contact">Punjab, Pakistan &nbsp;|&nbsp; <a href="mailto:kiranzahid188@gmail.com?subject=Portfolio%20enquiry">kiranzahid188@gmail.com</a> &nbsp;|&nbsp; <a href="https://wa.me/923187977782">WhatsApp: +92 318 7977782</a></p>
+      <p class="role">AI Automation Developer · Robotics Learner · Software QA Tester</p>
+      <p class="contact">Punjab, Pakistan &nbsp;|&nbsp; <a href="mailto:kiranzahid188@gmail.com">kiranzahid188@gmail.com</a> &nbsp;|&nbsp; <a href="https://wa.me/923187977782">WhatsApp: +92 318 7977782</a></p>
       <p class="contact">
         <a id="cvPortfolioOut" href="https://nexus-kinematics.github.io/Kiranzahid_portfolio/">Portfolio</a> &nbsp;|&nbsp;
         <a href="https://www.linkedin.com/in/kiran-zahid-3a4a5a433">LinkedIn</a> &nbsp;|&nbsp;
@@ -56,7 +56,7 @@
 
     <h2>Professional summary</h2>
     <div id="cvSummaryOut">
-    <p>Emerging technology professional focused on practical AI workflow automation using n8n, OpenAI, Gmail, and Google Sheets, with documented manual software testing experience and ongoing robotics coursework through Northwestern University.</p>
+    <p>Emerging technology professional focused on practical AI workflow automation using n8n, Zapier, OpenAI, Gmail, and Google Sheets, with documented manual software testing experience and ongoing robotics coursework.</p>
 
     </div>
     <h2>Core skills</h2>
@@ -72,23 +72,15 @@
     <h2>Projects</h2>
     <div class="item">
       <h3>AI Lead Qualification &amp; CRM Automation</h3>
-      <p>Designed and configured an n8n workflow that normalizes web-form leads, assigns Hot/Warm/Cold priority with OpenAI, records leads in Google Sheets, sends acknowledgements, and routes priority notifications. Result: a repeatable lead-triage process with central records and priority-based notifications.</p>
+      <p>Designed and configured a six-stage n8n lead-qualification workflow using OpenAI, Google Sheets, and Gmail, with three priority categories (Hot, Warm, Cold), lead logging, acknowledgement emails, and priority notifications.</p>
     </div>
     <div class="item">
       <h3>AI Customer Support Email Agent</h3>
-      <p>Designed and configured an n8n workflow for Gmail inquiry intake, validation, AI-assisted responses, human-review routing, eligible automated replies, and Google Sheets logging. Result: a structured support workflow with a record of handled inquiries.</p>
+      <p>Designed and configured a six-stage n8n customer-support email workflow covering Gmail intake, validation, AI-assisted response preparation, human-review or eligible auto-reply routing, invalid-email alerts, and Google Sheets logging.</p>
     </div>
     <div class="item">
       <h3>AQSA POS System Testing</h3>
-      <p>Manual functional testing of a point-of-sale application across key workflows. Executed and documented 100 test cases, compared expected and actual results, and recorded outcomes and limitations. Supporting test evidence is available in the portfolio.</p>
-    </div>
-    <div class="item">
-      <h3>CKD Screening AI (in progress)</h3>
-      <p>Demo exploring AI support for chronic kidney disease screening and early risk assessment. A demonstration project, not a diagnostic tool.</p>
-    </div>
-    <div class="item">
-      <h3>Fire Chaser Extinguisher Robot (in progress)</h3>
-      <p>Robotics project built around a fire-detection and fire-response concept.</p>
+      <p>Manual functional testing of a point-of-sale application across sales, inventory, customer records, reports, integrations, and backup workflows. Executed and documented 100 test cases, compared expected and actual results, and recorded outcomes and limitations.</p>
     </div>
 
     <h2>Experience</h2>
@@ -124,7 +116,7 @@
     <h2>Courses and training</h2>
     <div id="cvCertificationsOut">
     <ul>
-      <li>Modern Robotics Specialization, Northwestern University (currently pursuing)</li>
+      <li><strong>Modern Robotics Specialization — Northwestern University</strong> — Currently pursuing (featured technical coursework)</li>
       <li>AI Mastery, AQSA IT Solutions — Completed 21 September 2026</li>
       <li>Elements of AI, University of Helsinki — Completed 25 August 2026</li>
       <li>AI Elements, Riphah University — Completed 10 August 2026</li>

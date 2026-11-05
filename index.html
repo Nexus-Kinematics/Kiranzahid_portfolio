@@ -39,6 +39,7 @@
           <li><a class="nav__link" href="#about">About</a></li>
           <li><a class="nav__link" href="#skills">Skills</a></li>
           <li><a class="nav__link" href="#projects">Projects</a></li>
+          <li><a class="nav__link" href="#impact">Social impact</a></li>
           <li><a class="nav__link" href="#experience">Experience</a></li>
           <li><a class="nav__link" href="#education">Education</a></li>
           <li><a class="nav__link nav__link--cta" href="#contact">Contact</a></li>
@@ -52,13 +53,11 @@
       <div class="wrap hero__grid">
         <div class="hero__text">
           <h1 id="hero-title">Kiran Zahid</h1>
-          <p class="hero__role" data-edit="heroRole" data-label="Professional title" data-group="Profile and about">AI Automation Developer · Software QA · Robotics Learner</p>
-          <p class="hero__intro" data-edit="heroIntro" data-label="Hero introduction" data-group="Profile and about">I design practical AI-assisted workflows with n8n, OpenAI, Gmail, and Google Sheets, and document software testing through structured test cases and clear results. I am also building my foundations in robotics through Northwestern University coursework.</p>
-          <p class="hero__eyebrow">Open to entry-level roles, internships &amp; academic opportunities</p>
+          <p class="hero__role" data-edit="heroRole" data-label="Professional title" data-group="Profile and about">AI Automation Developer · Robotics Learner · Software QA Tester</p>
+          <p class="hero__intro" data-edit="heroIntro" data-label="Hero introduction" data-group="Profile and about">I build practical n8n and Zapier workflows that connect OpenAI, Gmail, and Google Sheets, and I document software testing with clear test cases and results. I’m also developing my foundations in robotics and automation.</p>
           <div class="hero__actions">
             <a class="btn btn--primary" href="#projects">View projects</a>
             <a class="btn btn--secondary" id="heroCvLink" href="Kiran-Zahid-CV.pdf" download>Download CV (PDF)</a>
-            <a class="btn btn--tertiary" href="#contact">Contact me</a>
           </div>
           <ul class="link-list" aria-label="Profiles">
             <li><a href="https://www.linkedin.com/in/kiran-zahid-3a4a5a433" target="_blank" rel="noopener noreferrer">LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a></li>
@@ -83,7 +82,7 @@
       <div class="wrap section__grid">
         <h2 id="about-title">About</h2>
         <div class="prose">
-          <p class="lead" data-edit="aboutLead" data-label="About headline" data-group="Profile and about">Practical AI automation, structured software testing, and a growing foundation in robotics.</p>
+          <p class="lead" data-edit="aboutLead" data-label="About headline" data-group="Profile and about">I build practical automations and approach software quality with a structured, detail-oriented testing mindset.</p>
           <p data-edit="aboutText1" data-label="About paragraph 1" data-group="Profile and about">My automation work brings together n8n, Zapier, OpenAI models, Gmail, and Google Sheets to streamline lead qualification and customer-support email workflows.</p>
           <p data-edit="aboutText2" data-label="About paragraph 2" data-group="Profile and about">I have documented manual functional testing for a point-of-sale application, including test-case execution and comparison of expected and actual results. Alongside this practical work, I am pursuing Modern Robotics coursework and continue developing my robotics fundamentals.</p>
           <p data-edit="aboutText3" data-label="About paragraph 3" data-group="Profile and about">I am based in Punjab, Pakistan, and I speak English, Urdu, and some French.</p>
@@ -153,8 +152,8 @@
             <div>
               <p class="project__kind">Workflow automation · Built and documented</p>
               <h3 class="project__title" id="p-lead" data-edit="leadTitle" data-label="Lead qualification: title" data-group="Projects">AI Lead Qualification &amp; CRM Automation</h3>
-              <p data-edit="leadDesc" data-label="Lead qualification: description" data-group="Projects">An n8n workflow that receives web-form leads, normalizes incoming data, uses an OpenAI model to assign a Hot, Warm, or Cold priority, records the result in Google Sheets, sends an acknowledgement email, and notifies the team according to lead priority.</p>
-              <p class="project__note"><strong>My contribution:</strong> I designed and configured the workflow steps and the connections between the form, OpenAI, Google Sheets, and Gmail.</p><p class="project__outcome"><strong>Outcome:</strong> A repeatable lead-triage process with a central spreadsheet record and priority-based notifications.</p>
+              <p data-edit="leadDesc" data-label="Lead qualification: description" data-group="Projects">A six-stage n8n workflow that receives web-form leads, normalizes incoming data, uses an OpenAI model to classify each lead into one of three priority levels (Hot, Warm, or Cold), records the result in Google Sheets, sends an acknowledgement email, and notifies the team according to priority.</p>
+              <p class="project__note"><strong>My contribution:</strong> I designed and configured the workflow steps and the connections between the form, OpenAI, Google Sheets, and Gmail.</p><p class="project__outcome"><strong>Outcome:</strong> Measured scope: six connected workflow stages and three lead-priority categories. The workflow centralizes lead records and routes follow-up notifications; processing-time and time-saved benchmarks have not been measured.</p>
               <ul class="tags" aria-label="Technologies">
                 <li>n8n</li>
                 <li>OpenAI</li>
@@ -189,8 +188,8 @@
             <div>
               <p class="project__kind">Workflow automation · Built and documented</p>
               <h3 class="project__title" id="p-support" data-edit="supportTitle" data-label="Support email agent: title" data-group="Projects">AI Customer Support Email Agent</h3>
-              <p data-edit="supportDesc" data-label="Support email agent: description" data-group="Projects">An n8n email workflow that receives customer inquiries through Gmail, cleans and validates message data, prepares an AI-assisted response, routes cases for human review or an eligible automated reply, and logs outcomes in Google Sheets.</p>
-              <p class="project__note"><strong>My contribution:</strong> I designed and configured the email intake, validation, AI response, review-routing, and logging steps.</p><p class="project__outcome"><strong>Outcome:</strong> A structured support workflow that supports human review and keeps a record of handled inquiries.</p>
+              <p data-edit="supportDesc" data-label="Support email agent: description" data-group="Projects">A six-stage n8n workflow for customer-support email: Gmail intake, message cleaning and validation, AI-assisted response preparation, human-review or eligible auto-reply routing, invalid-email alerting, and outcome logging in Google Sheets.</p>
+              <p class="project__note"><strong>My contribution:</strong> I designed and configured the email intake, validation, AI response, review-routing, and logging steps.</p><p class="project__outcome"><strong>Outcome:</strong> Measured scope: six defined workflow stages across email intake, response preparation, review/routing, alerts, and logging. No verified response-time or labor-savings benchmark is currently available.</p>
               <ul class="tags" aria-label="Technologies">
                 <li>n8n</li>
                 <li>OpenAI</li>
@@ -223,7 +222,7 @@
               <li>Recorded defects, blocked checks, and limitations</li>
               <li>Summarized the recorded test outcomes in a visual chart</li>
             </ul>
-            <p class="project__note"><strong>My contribution:</strong> I executed and documented test cases, compared expected and actual results, and recorded outcomes and limitations.</p><p class="project__outcome"><strong>Outcome:</strong> A documented test record covering 100 test cases, with supporting evidence available as a PDF.</p>
+            <p class="project__note"><strong>My contribution:</strong> I executed and documented test cases, compared expected and actual results, and recorded outcomes and limitations.</p><p class="project__outcome"><strong>Outcome:</strong> Measured scope: 100 documented test cases across multiple POS functional areas, with supporting test evidence available as a PDF.</p>
             <p class="project__actions">
               <a class="btn btn--primary" href="assets/AQSA-POS-Testing-Evidence.pdf" target="_blank" rel="noopener noreferrer">View testing evidence (PDF)</a>
               <a class="btn btn--secondary" href="assets/AQSA-POS-Testing-Evidence.pdf" download>Download PDF</a>
@@ -235,31 +234,32 @@
               <li>Test reporting</li>
             </ul>
           </article>
+        </div>
+      </div>
+    </section>
 
-          <article class="project" aria-labelledby="p-ckd">
-            <span class="badge">AI prototype · In progress</span>
-            <h3 id="p-ckd" data-edit="ckdTitle" data-label="CKD Screening AI: title" data-group="Projects">CKD Screening AI</h3>
-            <p data-edit="ckdDesc" data-label="CKD Screening AI: description" data-group="Projects">A demo exploring how AI can support screening and early risk assessment for chronic kidney disease (CKD). It is a demonstration project, not a medical or diagnostic tool.</p>
-            <p class="project__note">Demo visuals and a write-up will be added when they are ready.</p>
-            <ul class="tags" aria-label="Focus areas">
-              <li>Artificial intelligence</li>
-              <li>Healthcare</li>
-              <li>Prototype</li>
-            </ul>
+    <section class="section" id="impact" aria-labelledby="impact-title">
+      <div class="wrap">
+        <h2 id="impact-title">Technology for Social Impact</h2>
+        <p class="section-intro">I am interested in using accessible technology to make learning, everyday work, and essential services more efficient and inclusive. My current work reflects practical projects and ongoing learning; I am continuing to build the experience needed to contribute to wider community initiatives.</p>
+        <div class="impact-grid">
+          <article class="impact-card">
+            <p class="impact-card__eyebrow">Practical AI &amp; automation</p>
+            <h3>Making everyday workflows easier</h3>
+            <p>My n8n projects connect AI models with Gmail and Google Sheets to organize lead follow-up and prepare customer-support responses. They demonstrate how accessible tools can help people manage repetitive digital tasks more consistently.</p>
           </article>
-
-          <article class="project" aria-labelledby="p-fire">
-            <span class="badge">Concept · In progress</span>
-            <h3 id="p-fire" data-edit="fireTitle" data-label="Fire Chaser Robot: title" data-group="Projects">Fire Chaser Extinguisher Robot</h3>
-            <p data-edit="fireDesc" data-label="Fire Chaser Robot: description" data-group="Projects">A robotics project built around a fire-detection and fire-response concept.</p>
-            <p class="project__note">Technical details and build photos will be added as the project develops.</p>
-            <ul class="tags" aria-label="Focus areas">
-              <li>Robotics</li>
-              <li>Sensors</li>
-              <li>Embedded systems</li>
-            </ul>
+          <article class="impact-card">
+            <p class="impact-card__eyebrow">Responsible technology</p>
+            <h3>Building with care and accountability</h3>
+            <p>Through manual software testing, I practise checking expected behaviour, documenting actual results, and recording limitations. I want the technology I contribute to be useful, understandable, and carefully tested.</p>
+          </article>
+          <article class="impact-card">
+            <p class="impact-card__eyebrow">Education &amp; future contribution</p>
+            <h3>Connecting learning with opportunity</h3>
+            <p>My teaching experience strengthened my communication and ability to explain ideas to learners. I am developing my AI and robotics skills and hope to use them in future learning activities that help young people, especially girls, explore digital tools and STEM with confidence.</p>
           </article>
         </div>
+        <p class="impact-note">This section describes my current projects, learning, and goals. It does not claim completed community programmes, participant numbers, or measured social outcomes.</p>
       </div>
     </section>
 
@@ -291,7 +291,7 @@
             <li class="entry">
               <div class="entry__head">
                 <h4 class="entry__title">Modern Robotics Specialization</h4>
-                <p class="entry__when entry__status--active" data-edit="course1Status" data-label="Modern Robotics: status" data-group="Experience and education">Currently pursuing</p>
+                <p class="entry__when entry__status--active" data-edit="course1Status" data-label="Modern Robotics: status" data-group="Experience and education">Currently pursuing · Featured technical coursework</p>
               </div>
               <p class="entry__org">Northwestern University</p>
             </li>
@@ -347,7 +347,7 @@
         <h2 id="contact-title">Contact</h2>
         <div>
           <p class="contact__copy">For professional opportunities, project enquiries, or collaboration, please email me or start a WhatsApp conversation. I welcome relevant opportunities in AI automation, robotics, and software quality assurance.</p>
-          <div class="contact-method"><a class="contact__email" id="contactEmail" href="mailto:kiranzahid188@gmail.com?subject=Portfolio%20enquiry" aria-label="Compose an email to kiranzahid188@gmail.com">kiranzahid188@gmail.com</a><button class="copy-link" type="button" data-copy="kiranzahid188@gmail.com" aria-label="Copy email address">Copy email</button></div>
+          <div class="contact-method"><a class="contact__email" id="contactEmail" href="mailto:kiranzahid188@gmail.com" aria-label="Compose an email to kiranzahid188@gmail.com">kiranzahid188@gmail.com</a><button class="copy-link" type="button" data-copy="kiranzahid188@gmail.com" aria-label="Copy email address">Copy email</button></div>
           <div class="contact-method"><a class="contact__email contact__phone" id="contactPhone" href="https://wa.me/923187977782" target="_blank" rel="noopener noreferrer" aria-label="Start a WhatsApp chat with Kiran Zahid">+92 318 7977782</a><button class="copy-link" type="button" data-copy="+923187977782" aria-label="Copy WhatsApp number">Copy number</button></div>
           <p class="contact__meta" id="contactAvailability">Availability: part-time, night shifts, and weekends.</p>
           <ul class="link-list" aria-label="Profiles">
