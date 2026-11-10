@@ -23,7 +23,7 @@
     "portraitAlt": "Kiran Zahid portrait",
     "availability": "Part-time, nights & weekends (confirm current availability)",
     "email": "kiranzahid188@gmail.com",
-    "cv": "Kiran-Zahid-CV.pdf",
+    "cv": "Kiran-Zahid-CV%20(1).pdf",
     "phone": "03187977782"
   },
   "links": [
@@ -215,10 +215,10 @@
       "type": "COURSE",
       "title": "AI Mastery",
       "institution": "AQSA IT Solutions",
-      "status": "Completed · 21 September 2026",
-      "description": "",
-      "certificateImage": "",
-      "certificatePdf": "",
+      "status": "Completed · May–September 2026",
+      "description": "Certificate issued 6 November 2026.",
+      "certificateImage": "assets/certificates/ai-mastery-aqsa.jpg",
+      "certificatePdf": "assets/certificates/ai-mastery-aqsa.pdf",
       "link": ""
     },
     {
@@ -226,19 +226,19 @@
       "title": "Elements of AI",
       "institution": "University of Helsinki",
       "status": "Completed · 25 August 2026",
-      "description": "",
-      "certificateImage": "",
-      "certificatePdf": "",
-      "link": ""
+      "description": "2 ECTS credits · Official certificate verification available.",
+      "certificateImage": "assets/certificates/elements-of-ai-helsinki.jpg",
+      "certificatePdf": "assets/certificates/elements-of-ai-helsinki.pdf",
+      "link": "https://certificates.mooc.fi/validate/br7wjiwfdcb"
     },
     {
       "type": "COURSE",
-      "title": "AI Elements",
-      "institution": "Riphah University",
+      "title": "AI Essentials",
+      "institution": "Riphah International College (RIC)",
       "status": "Completed · 10 August 2026",
-      "description": "",
-      "certificateImage": "",
-      "certificatePdf": "",
+      "description": "Professional course covering fundamental principles of artificial intelligence and generative AI.",
+      "certificateImage": "assets/certificates/ai-essentials-riphah-college.jpg",
+      "certificatePdf": "assets/certificates/ai-essentials-riphah-college.pdf",
       "link": ""
     }
   ],
